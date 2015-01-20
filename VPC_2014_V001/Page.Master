@@ -1,0 +1,152 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="VPC_2014_V001.Page" %>
+<%@ Import Namespace=Service %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <!-- Title here -->
+    <title runat="server"><%=Page.Title%></title>
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your,Keywords">
+    <meta name="author" content="ResponsiveWebInc">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    <!-- Bootstrap CSS -->
+    <link href="/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Pretty Photo -->
+    <link href="/Content/prettyPhoto.css" rel="stylesheet">
+    <!-- Flex slider -->
+    <link href="/Content/flexslider.css" rel="stylesheet">
+    <!-- Parallax slider -->
+    <link rel="stylesheet" href="/Content/slider.css">
+     <!-- Date picker -->
+    <link rel="stylesheet" href="/Content/bootstrap-datetimepicker.min.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="/Content/owl.carousel.css">
+    <!-- Font awesome CSS -->
+    <link href="/Content/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/Content/style.css" rel="stylesheet">
+    <!-- Stylesheet for Color -->
+    <link href="/Content/green.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon/favicon.png">
+    <asp:ContentPlaceHolder ID="css" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+
+    <!-- Header starts -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-3">
+                    <!-- Logo. Use class "color" to add color to the text. -->
+                    <img src="/img/logo.png" />
+                </div>
+                <div class="col-md-8 col-sm-9">
+                    <!-- Navigation -->
+                    <div class="logo text-right">
+                        <%if (UserInfo != null)
+                          {%>
+                        <a href="/Customer"><i class="fa fa-user fa-2x">&nbsp;</i>会员中心</a>
+                        <%}
+                          else
+                          {%>
+                        <a class="btn btn-default" href="/Account/Login">登录</a>
+                        <a class="btn btn-default" href="/Account/Regist">注册</a>
+                        <%} %>
+                    </div>
+                    <!--/ Navigation end -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Seperator -->
+    <div class="sep"></div>
+    <!--/ Header ends -->
+    <asp:ContentPlaceHolder ID="body" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Footer starts -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="widget">
+                                <h5>联系我们</h5>
+                                <hr />
+                                 <% var contact = b_Cache.GettbInfo().SingleOrDefault(p => p.InfoType == 3);%>
+                                <p><%=contact.CContent%></p>
+                                <hr />
+                                <% var siteinfo = b_Cache.GetSiteInfo();%>
+                                <i class="fa fa-home"></i>&nbsp; <%=siteinfo.Address%>
+						  <hr />
+                                <i class="fa fa-phone"></i>&nbsp; <%=siteinfo.Phone%>
+						  <hr />
+                                <i class="fa fa-envelope-o"></i>&nbsp; <a href="mailto:<%=siteinfo.Email%>"><%=siteinfo.Email%></a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 pull-right">
+                            <div class="widget">
+                                <h5>关于我们</h5>
+                                <hr />
+                                <% var about = b_Cache.GettbInfo().SingleOrDefault(p => p.InfoType == 2);%>
+                                <p><%=about.CContent%></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+                    <!-- Copyright info -->
+                    <p class="copy center">Copyright &copy; <%=DateTime.Now.Year%>&#12288;|&#12288;<a href="/">51eshare</a>&#12288;|&#12288;<%=siteinfo.Copyright%></p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </footer>
+
+    <!-- Footer ends -->
+
+    <!-- Scroll to top -->
+    <span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span>
+
+    <!-- Javascript files -->
+    <!-- jQuery -->
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <!-- Isotope, Pretty Photo JS -->
+    <script src="/Scripts/jquery.isotope.js"></script>
+    <script src="/Scripts/jquery.prettyPhoto.js"></script>
+    <!-- Filter for support page -->
+    <script src="/Scripts/filter.js"></script>
+    <!-- Flex slider -->
+    <script src="/Scripts/jquery.flexslider-min.js"></script>
+    <script src="/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <!-- Parallax Slider -->
+    <script src="/Scripts/jquery.cslider.js"></script>
+    <!-- Parallax slider extra -->
+    <script src="/Scripts/modernizr.custom.28468.js"></script>
+    <!-- Owl Carousel -->
+    <script src="/Scripts/owl.carousel.min.js"></script>
+    <!-- Respond JS for IE8 -->
+    <script src="/Scripts/respond.min.js"></script>
+    <!-- HTML5 Support for IE -->
+    <script src="/Scripts/html5shiv.js"></script>
+    <!-- Custom JS -->
+    <script src="/Scripts/custom.js"></script>
+    <asp:ContentPlaceHolder ID="js" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Bootstrap.Switch</id>
+    <version>3.0.1</version>
+    <title>Bootstrap Switch</title>
+    <authors>Mattia Larentis</authors>
+    <owners>Mattia Larentis</owners>
+    <licenseUrl>https://github.com/nostalgiaz/bootstrap-switch/blob/master/LICENSE</licenseUrl>
+    <projectUrl>http://www.bootstrap-switch.org/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Turn checkboxes and radio buttons in toggle switches. Please report NuGet package issues to https://github.com/blachniet/bootstrap-switch-nuget/issues.</description>
+    <summary>Turn checkboxes and radio buttons in toggle switches.</summary>
+    <releaseNotes>See http://www.bootstrap-switch.org/.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>bootstrap switch javascript js</tags>
+    <dependencies>
+      <dependency id="bootstrap" version="2.3.1" />
+    </dependencies>
+  </metadata>
+</package>

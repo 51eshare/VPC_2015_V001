@@ -1,0 +1,228 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FullSite.Master.cs" Inherits="VPC_2014_V001.FullSite" %>
+
+<!DOCTYPE html>
+<html lang="zh">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!-- Title and other stuffs -->
+    <title><%: Page.Title %> - 51eshare.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="描述">
+    <meta name="keywords" content="关键字">
+    <meta name="author" content="作者">
+    <!-- Stylesheets -->
+    <link href="/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Font awesome icon -->
+    <link rel="stylesheet" href="/Content/font-awesome.min.css">
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="/Content/jquery-ui.css">
+    <!-- Calendar -->
+    <link rel="stylesheet" href="/Content/fullcalendar.css">
+    <!-- prettyPhoto -->
+    <link rel="stylesheet" href="/Content/prettyPhoto.css">
+    <!-- Star rating -->
+    <link rel="stylesheet" href="/Content/rateit.css">
+    <!-- Date picker -->
+    <link rel="stylesheet" href="/Content/bootstrap-datetimepicker.min.css">
+    <!-- CLEditor -->
+    <link rel="stylesheet" href="/Content/jquery.cleditor.css">
+    <!-- Data tables -->
+    <link rel="stylesheet" href="/Content/jquery.dataTables.css">
+    <!-- Bootstrap toggle -->
+    <link rel="stylesheet" href="/Content/jquery.onoff.css">
+    <!-- Main stylesheet -->
+    <link href="/Content/admin.css" rel="stylesheet">
+    <!-- Widgets stylesheet -->
+    <link href="/Content/widgets.css" rel="stylesheet">
+    <script src="/Content/respond.min.js"></script>
+    <!--[if lt IE 9]>
+  <script src="/Scripts/html5shiv.js"></script>
+  <![endif]-->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon/favicon.png">
+    <asp:ContentPlaceHolder ID="css" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
+        <div class="conjtainer">
+            <!-- Menu button for smallar screens -->
+            <nav class="navbar">
+                <ul class="nav nav-tabs pull-right">
+                    <%=sb.ToString()%>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main content starts -->
+
+    <div class="content">
+        <!-- Main bar -->
+        <div class="mainbar">
+            <!-- Matter -->
+
+            <div class="matter">
+                <div class="container">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+
+            <!-- Matter ends -->
+
+        </div>
+
+        <!-- Mainbar ends -->
+        <div class="clearfix"></div>
+
+    </div>
+    <!-- Content ends -->
+
+    <!-- Footer starts -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Copyright info -->
+                    <p class="copy">Copyright &copy; 2014 | <a href="#"><%=SiteInfo.title %></a> </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer ends -->
+
+    <!-- Scroll to top -->
+    <span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span>
+
+    <!-- JS -->
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <!-- jQuery -->
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/Scripts/jquery-ui.min.js"></script>
+    <!-- Full Google Calendar - Calendar -->
+    <script src="/Scripts/jquery.rateit.min.js"></script>
+    <!-- RateIt - Star rating -->
+    <script src="/Scripts/jquery.prettyPhoto.js"></script>
+    <!-- prettyPhoto -->
+    <script src="/Scripts/jquery.slimscroll.min.js"></script>
+    <!-- jQuery Slim Scroll -->
+    <script src="/Scripts/jquery.dataTables.min.js"></script>
+    <!-- Data tables -->
+
+    <!-- jQuery Flot -->
+    <script src="/Scripts/excanvas.min.js"></script>
+
+    <!-- jQuery Notification - Noty -->
+    <script src="/Scripts/jquery.noty.js"></script>
+    <!-- jQuery Notify -->
+    <script src="/Scripts/themes/default.js"></script>
+    <!-- jQuery Notify -->
+    <script src="/Scripts/layouts/bottom.js"></script>
+    <!-- jQuery Notify -->
+    <script src="/Scripts/layouts/topRight.js"></script>
+    <!-- jQuery Notify -->
+    <script src="/Scripts/layouts/top.js"></script>
+    <!-- jQuery Notify -->
+    <!-- jQuery Notification ends -->
+    <script src="/Scripts/sparklines.js"></script>
+    <!-- Sparklines -->
+    <script src="/Scripts/jquery.cleditor.min.js"></script>
+    <!-- CLEditor -->
+    <script src="/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <!-- Date picker -->
+    <script src="/Scripts/jquery.onoff.min.js"></script>
+    <!-- Bootstrap Toggle -->
+    <script src="/Scripts/filter.js"></script>
+    <!-- Filter for support page -->
+    <script src="/Scripts/custom.js"></script>
+    <!-- Custom codes -->
+    <script src="/Scripts/charts.js"></script>
+    <!-- Charts & Graphs -->
+    <!-- Script for this page -->
+    <script type="text/javascript">
+        $(function () {
+            /* Bar Chart starts */
+            var d1 = [];
+            for (var i = 0; i <= 20; i += 1)
+                d1.push([i, parseInt(Math.random() * 30)]);
+            var d2 = [];
+            for (var i = 0; i <= 20; i += 1)
+                d2.push([i, parseInt(Math.random() * 30)]);
+            var stack = 0, bars = true, lines = false, steps = false;
+            $(".stackControls input").click(function (e) {
+                e.preventDefault();
+                stack = $(this).val() == "With stacking" ? true : null;
+                plotWithOptions();
+            });
+            $(".graphControls input").click(function (e) {
+                e.preventDefault();
+                bars = $(this).val().indexOf("Bars") != -1;
+                lines = $(this).val().indexOf("Lines") != -1;
+                steps = $(this).val().indexOf("steps") != -1;
+                plotWithOptions();
+            });
+
+            /* Bar chart ends */
+        });
+        /* Curve chart starts */
+        $(function () {
+            var sin = [], cos = [];
+            for (var i = 0; i < 14; i += 0.5) {
+                sin.push([i, Math.sin(i)]);
+                cos.push([i, Math.cos(i)]);
+            }
+            function showTooltip(x, y, contents) {
+                $('<div id="tooltip">' + contents + '</div>').css({
+                    position: 'absolute',
+                    display: 'none',
+                    top: y + 5,
+                    left: x + 5,
+                    border: '1px solid #000',
+                    padding: '2px 8px',
+                    color: '#ccc',
+                    'background-color': '#000',
+                    opacity: 0.9
+                }).appendTo("body").fadeIn(200);
+            }
+
+            var previousPoint = null;
+            $("#curve-chart").bind("plothover", function (event, pos, item) {
+                $("#x").text(pos.x.toFixed(2));
+                $("#y").text(pos.y.toFixed(2));
+
+                if ($("#enableTooltip:checked").length > 0) {
+                    if (item) {
+                        if (previousPoint != item.dataIndex) {
+                            previousPoint = item.dataIndex;
+
+                            $("#tooltip").remove();
+                            var x = item.datapoint[0].toFixed(2),
+                                y = item.datapoint[1].toFixed(2);
+
+                            showTooltip(item.pageX, item.pageY,
+                                        item.series.label + " of " + x + " = " + y);
+                        }
+                    }
+                    else {
+                        $("#tooltip").remove();
+                        previousPoint = null;
+                    }
+                }
+            });
+            $("#curve-chart").bind("plotclick", function (event, pos, item) {
+                if (item) {
+                    $("#clickdata").text("You clicked point " + item.dataIndex + " in " + item.series.label + ".");
+                    plot.highlight(item.series, item.datapoint);
+                }
+            });
+        });
+        /* Curve chart ends */
+    </script>
+    <asp:ContentPlaceHolder ID="js" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPC_2014_V001", "VPC_2014_V001\VPC_2014_V001.csproj", "{8ED1D51A-9A28-4005-8D35-012F6A24E2F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{C35EBF46-F8DB-4FEE-B3CB-90DD81A3364B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{057EEA00-AB61-4A7B-9960-F4513D31F5C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{FA9D01BA-AD36-4FC6-9996-68D62E916EDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxFramework", "AjaxFramework\AjaxFramework.csproj", "{4FE4B3B9-58AC-449E-9FC9-71121D478CE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LitJson", "LitJson\LitJson.csproj", "{517DF037-79B2-43DE-BB2D-4D46643E4E1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxMethod", "AjaxMethod\AjaxMethod.csproj", "{3C765698-350C-4540-8264-1D2E21676947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetPager_CN", "AspNetPager\AspNetPager_CN.csproj", "{0FAC7937-3CDD-41F6-9DC8-C743C9F727F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8ED1D51A-9A28-4005-8D35-012F6A24E2F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED1D51A-9A28-4005-8D35-012F6A24E2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED1D51A-9A28-4005-8D35-012F6A24E2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED1D51A-9A28-4005-8D35-012F6A24E2F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C35EBF46-F8DB-4FEE-B3CB-90DD81A3364B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35EBF46-F8DB-4FEE-B3CB-90DD81A3364B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35EBF46-F8DB-4FEE-B3CB-90DD81A3364B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{057EEA00-AB61-4A7B-9960-F4513D31F5C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{057EEA00-AB61-4A7B-9960-F4513D31F5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{057EEA00-AB61-4A7B-9960-F4513D31F5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{057EEA00-AB61-4A7B-9960-F4513D31F5C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9D01BA-AD36-4FC6-9996-68D62E916EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9D01BA-AD36-4FC6-9996-68D62E916EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9D01BA-AD36-4FC6-9996-68D62E916EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9D01BA-AD36-4FC6-9996-68D62E916EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FE4B3B9-58AC-449E-9FC9-71121D478CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE4B3B9-58AC-449E-9FC9-71121D478CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE4B3B9-58AC-449E-9FC9-71121D478CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{517DF037-79B2-43DE-BB2D-4D46643E4E1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{517DF037-79B2-43DE-BB2D-4D46643E4E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{517DF037-79B2-43DE-BB2D-4D46643E4E1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C765698-350C-4540-8264-1D2E21676947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C765698-350C-4540-8264-1D2E21676947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C765698-350C-4540-8264-1D2E21676947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C765698-350C-4540-8264-1D2E21676947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FAC7937-3CDD-41F6-9DC8-C743C9F727F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FAC7937-3CDD-41F6-9DC8-C743C9F727F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FAC7937-3CDD-41F6-9DC8-C743C9F727F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

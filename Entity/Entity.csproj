@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C35EBF46-F8DB-4FEE-B3CB-90DD81A3364B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entity</RootNamespace>
+    <AssemblyName>Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper.SimpleCRUD, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Dapper.SimpleCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Email.cs" />
+    <Compile Include="ParameterConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tbCollect.cs" />
+    <Compile Include="tbCommission.cs" />
+    <Compile Include="tbDelivery.cs" />
+    <Compile Include="tbExpress.cs" />
+    <Compile Include="tbInfo.cs" />
+    <Compile Include="tbpickCommission.cs" />
+    <Compile Include="tbSlideshow.cs" />
+    <Compile Include="tbVendorCommission.cs" />
+    <Compile Include="tbPartnerCommission.cs" />
+    <Compile Include="tbReply.cs" />
+    <Compile Include="t_PageList.cs" />
+    <Compile Include="SiteInfo.cs" />
+    <Compile Include="tbAdPd.cs" />
+    <Compile Include="tbAdPdLog.cs" />
+    <Compile Include="tbDistrict.cs" />
+    <Compile Include="tbGroupCusPd.cs" />
+    <Compile Include="tbGroupCusPdLog.cs" />
+    <Compile Include="tbImage.cs" />
+    <Compile Include="tbItem.cs" />
+    <Compile Include="tbLevel.cs" />
+    <Compile Include="tbLoginLog.cs" />
+    <Compile Include="tbOrder.cs" />
+    <Compile Include="tbOrderCancel.cs" />
+    <Compile Include="tbOrderLog.cs" />
+    <Compile Include="tbPoint.cs" />
+    <Compile Include="tbProduct.cs" />
+    <Compile Include="tbProductClass.cs" />
+    <Compile Include="tbProductHistory.cs" />
+    <Compile Include="tbProductRefDistrict.cs" />
+    <Compile Include="tbProductRefDistrictHistory.cs" />
+    <Compile Include="tbPromotion.cs" />
+    <Compile Include="tbPromotionLog.cs" />
+    <Compile Include="tbQuestion.cs" />
+    <Compile Include="tbRecieveInfo.cs" />
+    <Compile Include="tbReview.cs" />
+    <Compile Include="tbShop.cs" />
+    <Compile Include="tbShopHistory.cs" />
+    <Compile Include="tbShopLog.cs" />
+    <Compile Include="tbShoppingCart.cs" />
+    <Compile Include="tbShopRefProduct.cs" />
+    <Compile Include="tbShopRefProductHistory.cs" />
+    <Compile Include="tbStatus.cs" />
+    <Compile Include="tbSystem.cs" />
+    <Compile Include="tbUser.cs" />
+    <Compile Include="tbUserType.cs" />
+    <Compile Include="tbUserTypeRefUser.cs" />
+    <Compile Include="tbVendor.cs" />
+    <Compile Include="tbVendorClass.cs" />
+    <Compile Include="tbVendorHistory.cs" />
+    <Compile Include="t_Email.cs" />
+    <Compile Include="vw.cs" />
+    <Compile Include="vwDistrict1.cs" />
+    <Compile Include="vwDistrict2.cs" />
+    <Compile Include="vwDistrict3.cs" />
+    <Compile Include="vwOrder4Vendor.cs" />
+    <Compile Include="vwOrderList.cs" />
+    <Compile Include="vwProduct4Partner.cs" />
+    <Compile Include="vwProduct4Vendor.cs" />
+    <Compile Include="vwProductAll.cs" />
+    <Compile Include="vwProductClassL1.cs" />
+    <Compile Include="vwProductClassL2.cs" />
+    <Compile Include="vwProductList.cs" />
+    <Compile Include="vwReceiveInfo.cs" />
+    <Compile Include="vwShopList.cs" />
+    <Compile Include="vwShoppingCart.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Dapper.SimpleCRUD.dll" />
+    <Content Include="bin\Dapper.SimpleCRUD.pdb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
