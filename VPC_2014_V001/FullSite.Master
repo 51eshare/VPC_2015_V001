@@ -46,14 +46,12 @@
 </head>
 <body>
     <div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
-        <div class="conjtainer">
             <!-- Menu button for smallar screens -->
             <nav class="navbar">
                 <ul class="nav nav-tabs pull-right">
                     <%=sb.ToString()%>
                 </ul>
             </nav>
-        </div>
     </div>
 
     <!-- Main content starts -->

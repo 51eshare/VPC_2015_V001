@@ -4,14 +4,32 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" ClientIDMode="Static" runat="server">
     <form id="OperationManageForm" runat="server" class="form-horizontal">
         <!-- Button trigger modal -->
-        <div class="form-group form-group-min">
-            <div class="col-xs-8 col-md-3">
-                <input type="search" runat="server" id="where" class="form-control" placeholder="可输入供应商名字">
+            <div class="row div_bottom">
+                <label class="col-md-1 control-label">账号</label>
+                <div class="col-md-2">
+                 <input type="text" id="sLoginId" runat="server" class="form-control" />
+                </div>
+                <label class="col-md-1 control-label">申请日期</label>
+                <div class="col-md-2">
+                    <div class="input-append input-group dtpicker" id="startdatepicker">
+                        <asp:TextBox  CssClass="form-control" ID="startdate" runat="server"></asp:TextBox>
+                        <span class="input-group-addon add-on">
+                            <i data-date-icon="fa fa-calendar" data-time-icon="fa fa-times" class="fa fa-calendar"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2 pull-left">
+                    <div class="input-append input-group dtpicker" id="enddatepicker">
+                        <asp:TextBox CssClass="form-control" ID="enddate" runat="server" TextMode="Date"></asp:TextBox>
+                        <span class="input-group-addon add-on">
+                            <i data-date-icon="fa fa-calendar" data-time-icon="fa fa-times" class="fa fa-calendar"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary" runat="server" onserverclick="btn_search_ServerClick" id="btn_search" type="button">查找</button>
+                </div>
             </div>
-            <div class="ol-md-4">
-                <button class="btn btn-primary" runat="server" onserverclick="btn_search_ServerClick" id="btn_search" type="button">查找</button>
-            </div>
-        </div>
         <!-- Modal -->
         <div class="container-fluid">
             <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound" OnItemCommand="Repeater1_ItemCommand">
@@ -19,22 +37,26 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <td><input type="checkbox" id="check_all" runat="server"/></td>
                                 <th>编码</th>
                                 <th>金额</th>
                                 <th>申请日期</th>
                                 <th>申请人</th>
+                                <th>账号</th>
                                 <th>状态</th>
-                                <th>操作</th>
+                                <th>操作 <asp:Button runat="server" OnClientClick="return pass_all();" CommandName="pass_all" Text="批量付款"  ID="btn_all" OnClick="btn_all_Click" CssClass="btn btn-danger" /></th>
                             </tr>
                         </thead>
                         <tbody>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
+                        <td><input type="checkbox" check_all="1" runat="server" id="checkbox_p" value='<%# DataBinder.Eval(Container.DataItem, "iCommissionId") %>'/></td>
                         <td><%# DataBinder.Eval(Container.DataItem, "iCommissionId") %></td>
-                        <td><%# DataBinder.Eval(Container.DataItem, "nprice") %></td>
+                        <td><%# Math.Abs(decimal.Parse(DataBinder.Eval(Container.DataItem, "nprice").ToString())) %></td>
                         <td><%# DataBinder.Eval(Container.DataItem, "dDate") %></td>
                         <td><%# DataBinder.Eval(Container.DataItem, "sLoginId") %></td>
+                        <td><%# DataBinder.Eval(Container.DataItem, "ilipay") %></td>
                         <td><%# DataBinder.Eval(Container.DataItem, "sStatus") %>
                             <input type="hidden" runat="server" id="input_iStatus" value='<%# DataBinder.Eval(Container.DataItem, "iState") %>' />
                         </td>
@@ -60,74 +82,15 @@
                 </div>
             </div>
         </div>
+        <input type="hidden" id="check_all_value" runat="server" />
     </form>
-    <!-- 模态框（Modal） -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-        aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"
-                        aria-hidden="true">
-                        ×
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">供应商审核
-                    </h4>
-                </div>
-
-                <div class="modal-body">
-                    <input type="hidden" id="iUserId" value="0" />
-                    <div class="row">
-                        <label class="col-lg-2">审核结果:</label>
-                        <div class="col-lg-10">
-                            <label for="pass">通过</label>
-                            <input type="radio" id="pass" checked="checked" value="1" name="checkresult" />
-                            &#12288;
-                   <label for="stop">不通过</label>
-                            <input type="radio" id="stop" value="2" name="checkresult" />
-                        </div>
-                    </div>
-                    <div class="row" checkresult_id="1">
-                        <label class="col-lg-2">原因:</label>
-                        <div class="col-lg-10">
-                            <textarea class="form-control form-inline" id="sQuestionText"></textarea>
-                        </div>
-                    </div>
-                    <div checkresult_id="2">
-                        <div class="row form-inline">
-                            <label class="col-lg-2">服务费金额:</label>
-                            <div class="col-lg-5">
-                                <input type="number" id="ServicePrice" class="form-control" />
-                            </div>(元)
-                        </div>
-                        <div class="data-space"></div>
-                        <div class="row">
-                            <label class="col-lg-2">服务到期日:</label>
-                            <div class="col-lg-5">
-                                <input type="date" id="ServiceDate" class="form-control" />
-                            </div>(如：2015-12-31)
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="btn_submit" class="btn btn-primary">
-                        提交
-                    </button>
-                     <button type="button" class="btn btn-default"
-                        data-dismiss="modal">
-                        关闭
-                    </button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="js" runat="server">
+    <script src="/Scripts/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="/Scripts/public.js"></script>
     <script type="text/javascript">
         $(function () {
+            $("#startdatepicker,#enddatepicker").datetimepicker({ pickTime: false, format: "yyyy-MM-dd", autoclose: true, language: 'zh-CN' });
             $("div[checkresult_id='1']").hide();
             $("#pass").prop("checked", "checked");
             $("input[name='checkresult']").change(function () {
@@ -155,12 +118,12 @@
                     else {
                         $.post("/Ajax/CheckStop.ajax", {
                             _iuserid: $("#iUserId").val(), squestiontext: $("#sQuestionText").val(),
-                            servicedate: $("#ServiceDate").val(), serviceprice: $("#ServicePrice").val(),iclass:_selectvalue
+                            servicedate: $("#ServiceDate").val(), serviceprice: $("#ServicePrice").val(), iclass: _selectvalue
                         }, function (result) {
-                            if(result.data)
-                            alert("提交成功！");
-                        else
-                            alert("提交失败！");
+                            if (result.data)
+                                alert("提交成功！");
+                            else
+                                alert("提交失败！");
                         });
                     }
                 }

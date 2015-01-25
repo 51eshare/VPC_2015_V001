@@ -583,5 +583,26 @@ namespace Common
                 }
             }
         }
+
+    }
+
+    public static class ClassChange
+    {
+        #region 字符串数组转换数组
+        /// <summary>
+        /// 字符串数组转换数组
+        /// </summary>
+        /// <param name="Content">字符串数组</param>
+        /// <returns></returns>
+        public static long[] ToLongArray(string[] Content)
+        {
+            var c = new long[Content.Length];
+            for (int i = 0; i < Content.Length; i++)
+            {
+                c[i] = long.Parse(Content[i]);
+            }
+            return c;
+        }
+        #endregion 
     }
 }

@@ -92,5 +92,32 @@ namespace VPC_2014_V001.VPC.Customer {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::Wuqi.Webdiyer.AspNetPager aspnetpagerpaging;
+        
+        /// <summary>
+        /// check_all_value 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden check_all_value;
+        
+        /// <summary>
+        /// iorderid 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden iorderid;
+        
+        /// <summary>
+        /// itbExpress 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect itbExpress;
     }
 }

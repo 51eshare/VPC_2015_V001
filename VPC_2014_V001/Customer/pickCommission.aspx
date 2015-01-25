@@ -73,7 +73,7 @@
                             <headertemplate>
                         <thead>
                             <tr>
-                               <th>编码</th>
+                                <th>编码</th>
                                 <th>金额</th>
                                 <th>余额</th>
                                 <th>日期</th>
@@ -86,7 +86,7 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <tr>
-                                <td><%# DataBinder.Eval(Container.DataItem, "iCommissionId") %></td>
+                                <td><%# DataBinder.Eval(Container.DataItem, "iOrderId") %></td>
                                 <td><%# DataBinder.Eval(Container.DataItem, "snprice") %></td>
                                 <td><%# DataBinder.Eval(Container.DataItem, "saprice") %></td>
                                 <td><%# DataBinder.Eval(Container.DataItem, "dDate") %></td>

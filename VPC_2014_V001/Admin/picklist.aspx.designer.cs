@@ -22,13 +22,31 @@ namespace VPC_2014_V001.VPC.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm OperationManageForm;
         
         /// <summary>
-        /// where 控件。
+        /// sLoginId 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl where;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText sLoginId;
+        
+        /// <summary>
+        /// startdate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox startdate;
+        
+        /// <summary>
+        /// enddate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox enddate;
         
         /// <summary>
         /// btn_search 控件。
@@ -56,5 +74,14 @@ namespace VPC_2014_V001.VPC.Admin {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::Wuqi.Webdiyer.AspNetPager aspnetpagerpaging;
+        
+        /// <summary>
+        /// check_all_value 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden check_all_value;
     }
 }

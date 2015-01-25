@@ -34,15 +34,15 @@
             <div id="sDistrict_tip"></div>
         </div>
         <div class="data-space"></div>
-        <div class="form-group">
+        <div class="form-group hidden">
             <label class="col-sm-2 control-label">邮箱</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" id="cOwnerMail" runat="server" placeholder="必填项" required/>
             </div>
             <div id="cOwnerMail_tip"></div>
         </div>
-        <div class="data-space"></div>
-         <div class="form-group">
+        <div class="data-space hidden"></div>
+         <div class="form-group hidden">
             <label class="col-sm-2 control-label">小伙伴姓名</label>
             <div class="col-sm-8">
                  <input type="text" class="form-control" id="cOwnerName" runat="server" placeholder="最长25位" required/>
@@ -50,7 +50,7 @@
             <div id="cOwnerName_tip"></div>
         </div>
         <div class="data-space"></div>
-        <div class="form-group">
+        <div class="form-group hidden">
             <label class="col-sm-2 control-label">支付宝账号</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" id="cOwnerAccout" runat="server" placeholder="必填项" required/>
@@ -58,7 +58,7 @@
             <div id="cOwnerAccout_tip"></div>
         </div>
         <div class="data-space"></div>
-        <div class="form-group">
+        <div class="form-group hidden">
             <label class="col-sm-2 control-label">手机号</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" id="cOwnerMP" runat="server" placeholder="必填项" required/>
@@ -129,12 +129,12 @@
                         required: true,
                         min:1
                     },
-                    <%=cOwnerMail.UniqueID%>: {
+<%--                    <%=cOwnerMail.UniqueID%>: {
                         required: true,
                         email:true,
                         maxlength:25
-                    },
-                    <%=cOwnerName.UniqueID%>: {
+                    },--%>
+                    <%--<%=cOwnerName.UniqueID%>: {
                         required: true,
                         maxlength:10
                     },
@@ -146,7 +146,7 @@
                         required: true,
                         digits:true,
                         maxlength:20
-                    },
+                    },--%>
                     <%=sShopDesc.UniqueID%>: {
                         required: true,
                         maxlength:50
@@ -166,18 +166,18 @@
                                  required:"店铺所在地没有选择",
                                  min:"店铺所在地没有选择"
                              },
-                    <%=cOwnerMail.UniqueID%>: 
+                    <%--<%=cOwnerMail.UniqueID%>: 
                              {
                                  required:"邮箱不能为空",
                                  email:"邮箱格式不对",
                                  maxlength:"邮箱不能超过{0}个字"
-                             },
-                    <%=cOwnerName.UniqueID%>: 
+                             },--%>
+                    <%--<%=cOwnerName.UniqueID%>: 
                              {
                                  required:"小伙伴姓名不能为空",
                                  maxlength:"小伙伴姓名不能超过{0}个字"
-                             },
-                    <%=cOwnerAccout.UniqueID%>: 
+                             },--%>
+                    <%--<%=cOwnerAccout.UniqueID%>: 
                              {
                                  required:"支付宝账号不能为空",
                                  maxlength:"支付宝账号不能超过{0}个字"
@@ -187,7 +187,7 @@
                                  required:"手机号不能为空",
                                  digits:"手机号只能是整数",
                                  maxlength:"手机号不能超过{0}个字"
-                             },
+                             },--%>
                     <%=sShopDesc.UniqueID%>: 
                              {
                                  required:"店铺介绍不能为空",

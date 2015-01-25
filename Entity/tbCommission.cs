@@ -78,5 +78,12 @@ namespace Entity
         /// 备注
         /// </summary>
         public string remark { get; set;}
+
+        [Editable(false)]
+        /// <summary>
+        /// 支付宝账号
+        /// </summary>
+        public string ilipay { get; set;}
+
     }
 }

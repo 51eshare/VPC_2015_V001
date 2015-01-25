@@ -60,14 +60,14 @@ namespace VPC_2014_V001
                 return 0;
         }
 
-        protected void BindOrderState(DropDownList ddl)
+        protected void BindOrderState(DropDownList ddl,int defaultvalue=0)
         {
             ddl.DataSource = b_Cache.GetStatus().Where(p => p.StateType == StateType.orderstate);
             ddl.DataTextField = "sStatus";
             ddl.DataValueField = "StateValue";
             ddl.DataBind();
             ddl.Items.Insert(0, new ListItem("--请选择订单状态--", ""));
-            ddl.SelectedIndex = 0;
+            ddl.SelectedIndex = defaultvalue;
         }
         protected void BindOrderState(HtmlSelect ddl)
         {

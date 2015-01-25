@@ -61,7 +61,7 @@ namespace VPC_2014_V001.VPC.Customer
             {
                 var _tbpickCommission = new tbCommission();
                 _tbpickCommission.iUserId = UserInfo.RealID;
-                _tbpickCommission.iOrderId = -10;
+                _tbpickCommission.iOrderId = 0;
                 _tbpickCommission.nprice = -decimal.Parse(nprice.Text);
                 _tbpickCommission.aprice = decimal.Parse(allnprice.InnerHtml) - decimal.Parse(nprice.Text);
                 _tbpickCommission.iState = 1;

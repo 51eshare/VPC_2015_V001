@@ -34,7 +34,7 @@
                 }
             });
             $('#myModal').on('hide.bs.modal', function () {
-                window.location.reload();
+                window.location.href = window.location.href;
             })
         });
     </script>
@@ -90,7 +90,7 @@
             </div>
             <!--list-->
             <div class="container-fluid">
-                <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+                <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound" OnItemCommand="Repeater1_ItemCommand">
                     <HeaderTemplate>
                         <table class="table">
                             <thead>
@@ -112,6 +112,8 @@
                             <td class='<%#Eval("text_style")%> text-bold'><%#Eval("sStatus")%></td>
                             <td>
                                 <input type="button" runat="server" visible='<%#Eval("iStatus").ToString().Equals("2")%>' iuserid='<%# DataBinder.Eval(Container.DataItem, "iOrderId") %>' class="btn btn-danger" value="发货" id="show_hand" />
+                                <asp:Button ID="payreturn_row" Visible="false" Text="确认退款" CommandName="payreturn_row" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"iOrderId")%>' CssClass="btn btn-sm btn-danger" runat="server" />
+                                <asp:Button ID="salesreturn_row" Visible="false" Text="确认退货退款" CommandName="salesreturn_row" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"iOrderId")%>' CssClass="btn btn-sm btn-danger" runat="server" />
                             </td>
                         </tr>
                     </ItemTemplate>

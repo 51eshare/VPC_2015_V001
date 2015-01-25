@@ -59,17 +59,59 @@ namespace VPC_2014_V001.VPC.Vendor
         }
         protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            var _iPdId = e.CommandArgument;
-            if (new b_tbShopRefProduct().Delete(Int32.Parse(_iPdId.ToString())))
+            var _payreturn_row = e.CommandName;
+            var _iPdId = e.CommandArgument.ToString();
+            var _info = new tbOrder();
+            if (_payreturn_row.Equals("payreturn_row"))
             {
-                tipclass = string.Empty;
-                message.Text = "下架成功！";
-                loaddata();
+                _info.iOrderId = long.Parse(_iPdId);
+                _info.iStatus = 7;
+                if (new b_tbOrder().Updatepayreturn(_info))
+                {
+                    tipclass = string.Empty;
+                    message.Text = "确认退款成功！";
+                    loaddata();
+                }
+                else
+                {
+                    tipclass = string.Empty;
+                    message.Text = "确认退款失败！";
+                }
+
             }
             else
             {
-                tipclass = string.Empty;
-                message.Text = "下架失败！";
+                _info.iOrderId = long.Parse(_iPdId);
+                _info.iStatus = 8;
+                if (new b_tbOrder().Updatepayreturn(_info))
+                {
+                    tipclass = string.Empty;
+                    message.Text = "确认退货退款成功！";
+                    loaddata();
+                }
+                else
+                {
+                    tipclass = string.Empty;
+                    message.Text = "确认退货退款失败！";
+                }
+            }
+        }
+
+        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
+            {
+                var _payreturn_row = e.Item.FindControl("payreturn_row") as Button;
+                var _salesreturn_row = e.Item.FindControl("salesreturn_row") as Button;
+                var _info = e.Item.DataItem as tbOrder;
+                if (_info.iStatus == 9) //未付款
+                {
+                    _payreturn_row.Visible = true;
+                }
+                else if (_info.iStatus == 10)
+                {
+                    _salesreturn_row.Visible = true;
+                }
             }
         }
     }

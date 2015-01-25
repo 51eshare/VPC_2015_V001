@@ -5,9 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.IO;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 
 namespace VPC_2014_V001.VPC.Customer
 {
@@ -18,7 +21,8 @@ namespace VPC_2014_V001.VPC.Customer
             if (!IsPostBack)
             {
                 IsLogin();
-                BindOrderState(state);
+                BindOrderState(state,1);
+                BindtbExpress(itbExpress);
                 loaddata();
             }
         }
@@ -107,29 +111,41 @@ namespace VPC_2014_V001.VPC.Customer
             }
             else if (_commandname.Equals("payreturn_row"))
             {
-                if (new b_tbOrder().UpdateStatus(Int32.Parse(_iorderid.ToString()), 7))
+                if (new b_tbOrder().UpdateStatus(Int32.Parse(_iorderid.ToString()), 9))
                 {
                     tipclass = string.Empty;
-                    message.Text = "退款成功！";
+                    message.Text = "退款申请成功！";
                     loaddata();
                 }
                 else
                 {
                     tipclass = string.Empty;
-                    message.Text = "退款失败！";
+                    message.Text = "退款申请失败！";
                 }
             }
-            else {
-                if (new b_tbOrder().UpdateStatus(Int32.Parse(_iorderid.ToString()), 8))
+            else if (_commandname.Equals("pass_all"))
+            {
+                if (new b_tbProduct().update(check_all_value.Value.Trim()))
                 {
-                    tipclass = string.Empty;
-                    message.Text = "退货退款成功！";
                     loaddata();
                 }
                 else
                 {
                     tipclass = string.Empty;
-                    message.Text = "退货退款失败！";
+                }
+            }
+            else
+            {
+                if (new b_tbOrder().UpdateStatus(Int32.Parse(_iorderid.ToString()), 10))
+                {
+                    tipclass = string.Empty;
+                    message.Text = "退货退款申请成功！";
+                    loaddata();
+                }
+                else
+                {
+                    tipclass = string.Empty;
+                    message.Text = "退货退款申请失败！";
                 }
             }
         }
@@ -142,7 +158,7 @@ namespace VPC_2014_V001.VPC.Customer
                 var _del_row = e.Item.FindControl("del_row") as Button;
                 var _sign_row = e.Item.FindControl("sign_row") as Button;
                 var _payreturn_row = e.Item.FindControl("payreturn_row") as Button;
-                var _salesreturn_row = e.Item.FindControl("salesreturn_row") as Button;
+                var _salesreturn_row = e.Item.FindControl("salesreturn_row") as HtmlInputButton;
                 var _info = e.Item.DataItem as tbOrder;
                 if (_info.iStatus == 1) //未付款
                 {
@@ -156,6 +172,8 @@ namespace VPC_2014_V001.VPC.Customer
                 {
                    _sign_row.Visible=_payreturn_row.Visible = _salesreturn_row.Visible= true;
                 }
+                if(_info.iStatus!=1)
+                    e.Item.FindControl("checkbox_p").Visible = false;
             }
         }
     }

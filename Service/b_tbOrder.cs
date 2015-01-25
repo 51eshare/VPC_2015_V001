@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using Dapper.Tvp;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Service
 {
@@ -51,21 +53,40 @@ namespace Service
             string _sql = "UPDATE tbOrder SET iException = @iexception WHERE iOrderId=@iorderid";
             return Execute(_sql, new { iexception = iexception, iorderid = iorderid }) > 0;
         }
-        #endregion 
-
-        public bool Add_Up_tbOrder(tbOrder tborder)
+        public bool UpdateExpress(tbSalesreturn info)
         {
-            DynamicParameter.Add("iUserid", tborder.iUserid);
-            DynamicParameter.Add("iShopRefPdId", tborder.iShopRefPdId);
-            DynamicParameter.Add("iDistrictId", tborder.iDistrictId);
-            DynamicParameter.Add("iOrderNum", tborder.iOrderNum);
-            DynamicParameter.Add("bBill", tborder.bBill);
-            DynamicParameter.Add("sOrderNum", tborder.sOrderNum);
-            DynamicParameter.Add("iScId", tborder.iScId);
-            DynamicParameter.Add("Result",1,dbType:DbType.Int32,direction:ParameterDirection.Output);
-            Execute("Add_Up_tbOrder", DynamicParameter,CommandType.StoredProcedure);
+            string _sql = "UPDATE tbOrder SET ExpressID = @ExpressID,ExpressNum = @ExpressNum,iStatus = 10 WHERE iOrderId=@iOrderId";
+            return Execute(_sql, new { ExpressID = info.ExpressID,ExpressNum=info.ExpressNum,iOrderId = info.iOrderId }) > 0;
+        }
+        /// <summary>
+        /// 退款、退货退款
+        /// 9:退款，10 退货退款 
+        /// </summary>
+        /// <returns></returns>
+        public bool Updatepayreturn(tbOrder _order)
+        {
+            DynamicParameter.Add("iOrderId", _order.iOrderId);
+            DynamicParameter.Add("iStatus", _order.iStatus);
+            DynamicParameter.Add("Result", 1, dbType: DbType.Int32, direction: ParameterDirection.Output);
+            Execute("p_payreturn", DynamicParameter, CommandType.StoredProcedure);
             int _Result = DynamicParameter.Get<int>("Result");
             return _Result == 1;
+        }
+        #endregion 
+        public bool Add_Up_tbOrder(tbOrder tborder)
+        {
+            int _Result = GetList<int>("Add_Up_tbOrder", new
+            {
+                iUserid = tborder.iUserid,
+                iDistrictId = tborder.iDistrictId,
+                bBill = tborder.bBill,
+                BillType = tborder.BillType,
+                Comhead = tborder.Comhead,
+                Remark = tborder.Remark,
+                ptable = tborder.Data,
+                sOrderNum = tborder.sOrderNum
+            }, CommandType.StoredProcedure).FirstOrDefault();
+            return _Result==1;
         }
     }
 }

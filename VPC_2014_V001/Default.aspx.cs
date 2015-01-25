@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace VPC_2014_V001
 {
-    public partial class _Default : Page
+    public partial class _Default : U_Base
     {
         protected void Page_Load(object sender, EventArgs e)
         {

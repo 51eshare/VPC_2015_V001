@@ -49,25 +49,25 @@
             <asp:Label ID="LbiProductNum" runat="server"></asp:Label>
         </div>
     </div>
-    <div class="row">
+    <div class="row hidden">
         <div class="col-md-2  col-xs-6 text-right text-bold">小伙伴姓名</div>
         <div class="col-md-10 col-xs-6">
             <asp:Label ID="LbcOwnerName" runat="server"></asp:Label>
         </div>
     </div>
-    <div class="row">
+    <div class="row hidden">
         <div class="col-md-2  col-xs-6 text-right text-bold">邮箱</div>
         <div class="col-md-10 col-xs-6">
             <asp:Label ID="LbcOwnerMail" runat="server"></asp:Label>
         </div>
     </div>
-    <div class="row">
+    <div class="row hidden">
         <div class="col-md-2  col-xs-6 text-right text-bold">支付宝账号</div>
         <div class="col-md-10 col-xs-6">
             <asp:Label ID="LbcOwnerAccout" runat="server"></asp:Label>
         </div>
     </div>
-    <div class="row">
+    <div class="row hidden">
         <div class="col-md-2  col-xs-6 text-right text-bold">手机号</div>
         <div class="col-md-10 col-xs-6">
             <asp:Label ID="LbcOwnerMP" runat="server"></asp:Label>

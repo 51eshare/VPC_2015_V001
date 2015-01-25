@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
+﻿using Entity;
 using Service;
-using System.Dynamic;
-using Entity;
-using Dapper;
+using System.IO;
+using System.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.UI.WebControls;
+using System.Data;
 
 namespace VPC_2014_V001.VPC.Customer
 {
@@ -31,20 +28,40 @@ namespace VPC_2014_V001.VPC.Customer
             price.InnerText = _vwShoppingCart.Sum(p => p.订单数量 * p.售价).ToString();
             if (_vwReceiveInfo.Any() && _vwReceiveInfo.SingleOrDefault(p => p.是否默认)!=null)
             iDistrictId.Value = _vwReceiveInfo.SingleOrDefault(p => p.是否默认).收货信息Id.ToString();
-
+        }
+        private DataTable GetDataTable()
+        {
+            var _data = new DataTable("t_ordertype");
+            _data.Columns.Add("ID", typeof(int));
+            _data.Columns.Add("iShopRefPdId", typeof(long));
+            _data.Columns.Add("iOrderNum", typeof(long));
+            _data.Columns.Add("iScId", typeof(long));
+            _data.Columns[0].AutoIncrement = true;
+            _data.Columns[0].AutoIncrementSeed = 1;
+            return _data;
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
             var _order = new tbOrder();
+            var _id = string.Empty;
+            var _table = GetDataTable();
+            DataRow _datarow;
             foreach (RepeaterItem item in Repeater1.Items)
             {
-                _order.iOrderNum = long.Parse((item.FindControl("iOrderNum") as HiddenField).Value);
+                _datarow = _table.NewRow();
+                _id = (item.FindControl("iScId") as HiddenField).Value;
+                _datarow["iOrderNum"] = long.Parse(Request.Form["number_"+_id]);
                 _order.iUserid = long.Parse((item.FindControl("iUserid") as HiddenField).Value);
-                _order.iShopRefPdId = long.Parse((item.FindControl("iShopRefPdId") as HiddenField).Value);
-                _order.iScId = long.Parse((item.FindControl("iScId") as HiddenField).Value);
+                _datarow["iShopRefPdId"] = long.Parse((item.FindControl("iShopRefPdId") as HiddenField).Value);
+                _datarow["iScId"] = long.Parse((item.FindControl("iScId") as HiddenField).Value);
+                _table.Rows.Add(_datarow);
             }
+            _order.Data=_table;
             _order.bBill = bBill.Checked;
+            _order.BillType = Int32.Parse(Request.Form["BillType"]);
+            _order.Comhead = comhead.Value;
+            _order.Remark = Remark.Value;
             _order.iDistrictId = Int32.Parse(iDistrictId.Value);
             if (new b_tbOrder().Add_Up_tbOrder(_order))
                 Response.Redirect("Orders");

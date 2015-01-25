@@ -100,6 +100,26 @@ namespace AjaxMethod
         }
         #endregion 
 
+        #region 退款退货
+        /// <summary>
+        /// 退款退货
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        [WebMethodAttr(RequestType.All)]
+        public bool Salesreturn(tbSalesreturn info)
+        {
+            if (HttpContext.Current.Session["UserInfo"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return new b_tbOrder().UpdateExpress(info);
+            }
+        }
+        #endregion 
+
         [WebMethodAttr(RequestType.All)]
         public bool changeilipay(long iUserId,string ilipay)
         {

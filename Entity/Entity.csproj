@@ -51,7 +51,9 @@
     <Compile Include="tbDelivery.cs" />
     <Compile Include="tbExpress.cs" />
     <Compile Include="tbInfo.cs" />
+    <Compile Include="tbOnlinePay.cs" />
     <Compile Include="tbpickCommission.cs" />
+    <Compile Include="tbSalesreturn.cs" />
     <Compile Include="tbSlideshow.cs" />
     <Compile Include="tbVendorCommission.cs" />
     <Compile Include="tbPartnerCommission.cs" />

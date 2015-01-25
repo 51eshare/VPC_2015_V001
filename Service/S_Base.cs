@@ -73,7 +73,14 @@ namespace Service
                 return _conn.Query<t>(sql,dParameters);
             }
         }
-
+        public virtual IEnumerable<t> GetList<t>(string sql, object dParameters = null, CommandType commandType = CommandType.Text)
+        {
+            using (IDbConnection _conn = new SqlConnection(ConnStr))
+            {
+                _conn.Open();
+                return _conn.Query<t>(sql, dParameters, commandType:commandType);
+            }
+        }
         public virtual IEnumerable<T> GetList(string sql, object dParameters = null,CommandType commandType= CommandType.Text)
         {
             using (IDbConnection _conn = new SqlConnection(ConnStr))

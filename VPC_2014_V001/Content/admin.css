@@ -440,6 +440,7 @@ form {
     background: -o-linear-gradient(top, #f8f8f8, #f2f2f2);
     background: linear-gradient(top, #f8f8f8, #f2f2f2);
     border-bottom: 1px solid #ddd;
+    margin-bottom: 0px;
     box-shadow: inset 0px 1px 1px #fff;
 }
 
@@ -801,6 +802,7 @@ header {
     background: #eee url("/img/main-back.png") repeat;
     border-left: 1px solid #ccc;
     /*z-index: 50;*/
+    padding-top:4px;
     min-height: 460px;
 }
 
@@ -1850,11 +1852,6 @@ footer {
     .mainbar {
         margin-left: 200px;
     }
-
-    .navbar {
-        margin-bottom: 18px !important;
-    }
-
     header {
         padding-top: 10px;
     }
@@ -1883,7 +1880,9 @@ footer {
 .data-space {
     margin: 2px 0px;
 }
-
+.text-width-80 {
+width:80px;display:inline!important;
+}
 .div_bottom {
     border-bottom: 1px solid #ccc;
 }

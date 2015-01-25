@@ -229,7 +229,7 @@ namespace Entity
         {
             get
             {
-                return new Dictionary<int, string>() { { 1, "text-warning" }, { 2, "text-warning" }, { 3, "text-warning" }, { 4, "text-warning" }, { 5, "text-success" }, { 6, "text-warning" }, { 7, "text-warning" }, { 8, "text-warning" } };
+                return new Dictionary<int, string>() { { 1, "text-warning" }, { 2, "text-warning" }, { 3, "text-warning" }, { 4, "text-warning" }, { 5, "text-success" }, { 6, "text-warning" }, { 7, "text-warning" }, { 8, "text-warning" }, { 9, "text-warning" }, { 10, "text-warning" } };
             }
         }
         [Editable(false)]
@@ -280,6 +280,34 @@ namespace Entity
         /// 付款时间
         /// </summary>
         public DateTime dPay { get; set;}
+
+        [Editable(false)]
+        /// <summary>
+        /// 快递公司ID
+        /// </summary>
+        public int ExpressID { get; set;}
+
+        [Editable(false)]
+        /// <summary>
+        /// 快递公司
+        /// </summary>
+        public string sExpressID { get; set; }
+
+        [Editable(false)]
+        /// <summary>
+        /// 快递单号
+        /// </summary>
+        public string ExpressNum { get; set;}
+
+        [Editable(false)]
+        public DataTable Data { get; set;}
+
+        [Editable(false)]
+        public int BillType { get; set;}
+        [Editable(false)]
+        public string Comhead { get; set;}
+        [Editable(false)]
+        public string Remark { get; set;}
         #endregion Model
 	}
 
@@ -308,6 +336,17 @@ namespace Entity
             return ReceivingStyle == 1 ? "手动" : "自动";
         } }
         public DateTime ReceivingDate { get; set;}
+
+        /// <summary>
+        /// 发票类型
+        /// 1：个人，2：公司
+        /// </summary>
+        public int BillType { get; set;}
+        /// <summary>
+        /// 公司抬头
+        /// </summary>
+        public string Comhead { get; set;}
+
 
     }
 }
