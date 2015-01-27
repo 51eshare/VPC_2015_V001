@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="VPC_2014_V001.Page" %>
-<%@ Import Namespace=Service %>
+
+<%@ Import Namespace="Service" %>
 <!DOCTYPE html>
 <html lang="en">
 <head runat="server">
@@ -23,7 +24,7 @@
     <link href="/Content/flexslider.css" rel="stylesheet">
     <!-- Parallax slider -->
     <link rel="stylesheet" href="/Content/slider.css">
-     <!-- Date picker -->
+    <!-- Date picker -->
     <link rel="stylesheet" href="/Content/bootstrap-datetimepicker.min.css">
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="/Content/owl.carousel.css">
@@ -33,6 +34,29 @@
     <link href="/Content/style.css" rel="stylesheet">
     <!-- Stylesheet for Color -->
     <link href="/Content/green.css" rel="stylesheet">
+
+
+    <!-- Xavier -->
+    <!-- WEIXIN -->
+    <script src="/WEIXIN/JS_WEIXIN.js"></script>
+    <script>
+        //var arr = document.cookie.match(new RegExp("(^| )WXB=([^;]*)(;|$)"));
+        //if (arr = null)
+
+        a = getCookie("WXB");
+        c_start = document.cookie.indexOf("WXB=");
+        if (c_start == -1) {
+            if (is_weixin()) {
+                document.cookie = 'WXB=1'
+            }
+            else {
+                document.cookie = 'WXB=0'
+            };
+        }
+        else {
+        }
+
+    </script>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon/favicon.png">
@@ -85,14 +109,14 @@
                             <div class="widget">
                                 <h5>联系我们</h5>
                                 <hr />
-                                 <% var contact = b_Cache.GettbInfo().SingleOrDefault(p => p.InfoType == 3);%>
+                                <% var contact = b_Cache.GettbInfo().SingleOrDefault(p => p.InfoType == 3);%>
                                 <p><%=contact.CContent%></p>
                                 <hr />
                                 <% var siteinfo = b_Cache.GetSiteInfo();%>
                                 <i class="fa fa-home"></i>&nbsp; <%=siteinfo.Address%>
-						  <hr />
+                                <hr />
                                 <i class="fa fa-phone"></i>&nbsp; <%=siteinfo.Phone%>
-						  <hr />
+                                <hr />
                                 <i class="fa fa-envelope-o"></i>&nbsp; <a href="mailto:<%=siteinfo.Email%>"><%=siteinfo.Email%></a>
                             </div>
                         </div>
