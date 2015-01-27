@@ -34,6 +34,21 @@
     <!-- Stylesheet for Color -->
     <link href="/Content/green.css" rel="stylesheet">
 
+
+    <!-- Xavier -->
+    <!-- WEIXIN -->
+    <script src="/WEIXIN/JS_WEIXIN.js"></script>
+    <script>
+        //var arr = document.cookie.match(new RegExp("(^| )WXB=([^;]*)(;|$)"));
+        //if (arr = null)
+            if (is_weixin()) {
+                document.cookie = 'WXB=1'
+            }
+            else {
+                document.cookie = 'WXB=0'
+            };
+    </script>
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon/favicon.png">
     <asp:ContentPlaceHolder ID="css" runat="server">
