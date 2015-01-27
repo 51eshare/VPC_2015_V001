@@ -55,6 +55,7 @@
     <Compile Include="tbpickCommission.cs" />
     <Compile Include="tbSalesreturn.cs" />
     <Compile Include="tbSlideshow.cs" />
+    <Compile Include="tbUsedArea.cs" />
     <Compile Include="tbVendorCommission.cs" />
     <Compile Include="tbPartnerCommission.cs" />
     <Compile Include="tbReply.cs" />

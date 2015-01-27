@@ -175,8 +175,18 @@ namespace Entity
                     return false;
             }
         }
-		#endregion Model
-	}
+
+        #region 是否微信
+        /// <summary>
+        /// 是否微信
+        /// true:是微信浏览器，false：不是微信浏览器
+        /// </summary>
+        [Editable(false)]
+        public bool isweixin { get; set; }
+        #endregion 
+
+        #endregion Model
+    }
 
     /// <summary>
     /// 店铺快速注册

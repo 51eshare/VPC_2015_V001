@@ -23,7 +23,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -53,6 +53,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -552,6 +553,7 @@
     <Content Include="kindeditor\asp.net\file_manager_json.ashx" />
     <Content Include="kindeditor\asp.net\upload_json.ashx" />
     <Content Include="Email.config" />
+    <Content Include="WEIXIN\JS_WEIXIN.js" />
     <None Include="Properties\PublishProfiles\VPC.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
@@ -1050,6 +1052,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WEIXIN\mp.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AddtbExpresses.aspx.cs">
@@ -1706,6 +1709,9 @@
     </Compile>
     <Compile Include="Vendor\StockEdit.aspx.designer.cs">
       <DependentUpon>StockEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WEIXIN\mp.ashx.cs">
+      <DependentUpon>mp.ashx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

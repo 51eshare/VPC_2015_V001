@@ -84,6 +84,28 @@ namespace Service
             }
             return _user;
         }
+        /// <summary>
+        /// 根据微信号登录
+        /// </summary>
+        /// <param name="sWxOpenId"></param>
+        /// <returns></returns>
+        public tbUser GetUserInfoBysWxOpenId(string sWxOpenId)
+        {
+            DynamicParameter.Add("sWxOpenId", sWxOpenId);
+            var _user = new tbUser();
+            using (var _dbconn = new SqlConnection(ConnStr))
+            {
+                _dbconn.Open();
+                var _reader = _dbconn.QueryMultiple("pcUserLoginBysWxOpenId", DynamicParameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (_reader.Read<int>().FirstOrDefault()>0)
+                {
+                    _user = _reader.Read<tbUser>().FirstOrDefault();
+                    if (_user != null)
+                        _user.UserType = _reader.Read<long>();
+                }
+            }
+            return _user;
+        }
         public tbUser GetUserInfo(string sLoginId, string sPassword, string sWxOpenId)
         {
             DynamicParameter.Add("sLoginId", sLoginId);

@@ -46,7 +46,7 @@ namespace Entity
         private int iselltype=1;
 
         public string sPdName { get; set;}
-        private string _sordernum = DateTime.Now.ToString("yyyyMMddhhmmssfffffff");
+        private string _sordernum = Guid.NewGuid().ToString();
 
         /// <summary>
         /// 购物车ID

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Web;
+using Common;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -17,7 +19,8 @@ namespace VPC_2014_V001
         {
             if (!IsPostBack)
             {
-                //Xavier Add WEIXIN
+
+                #region Xavier Add WEIXIN
                 if (UserInfo == null)
                 {
                     if (Request.Cookies["WXB"] != null)
@@ -30,8 +33,7 @@ namespace VPC_2014_V001
                         }
                         else if (Request.Cookies["WXB"].Value.ToString() == "2")
                         {
-                            string sWxOpenId;
-
+                            string sWxOpenId=string.Empty;
                             string code = "";
                             if (Request.QueryString["code"] != null && Request.QueryString["code"] != "")
                             {
@@ -39,7 +41,11 @@ namespace VPC_2014_V001
                                 code = Request.QueryString["code"].ToString();
                                 OAuth_Token Model = Get_token(code);  //获取token
                                 sWxOpenId = Model.openid;
-
+                                var _userinfo=new b_tbUser().GetUserInfoBysWxOpenId(sWxOpenId);
+                                if (_userinfo.iUserId > 0)
+                                    Session["UserInfo"] = _userinfo;
+                                else
+                                    Alert.ShowClose("注册失败！");
                                 //增加微信号后台自动登录代码
                                 //设置一个Session存放当前使用微信浏览器标志位，后续页面可以根据他来判别是不是微信浏览器
                                 
@@ -47,10 +53,12 @@ namespace VPC_2014_V001
                         }
                     }
                 }
+                #endregion
 
             }
         }
 
+        #region  微信
         private OAuth_Token Get_token(string code)
         {
             //获取微信回传的openid、access token
@@ -106,12 +114,10 @@ namespace VPC_2014_V001
                 }
             }
         }
-
-
+        #endregion
     }
 
-
-
+    #region 微信
     public class OAuth_Token
     {
         public OAuth_Token()
@@ -156,5 +162,6 @@ namespace VPC_2014_V001
             get { return _scope; }
         }
     }
+    #endregion 微信
 
 }
