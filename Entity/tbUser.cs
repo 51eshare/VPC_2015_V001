@@ -18,6 +18,7 @@ namespace Entity
 		{
             iParentID = 0;
             UserType = new List<long>();
+            isweixin = false;
         }
 		#region Model
 		private long _iuserid=0;

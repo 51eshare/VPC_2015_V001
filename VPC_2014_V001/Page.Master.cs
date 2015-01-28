@@ -43,7 +43,10 @@ namespace VPC_2014_V001
                                 sWxOpenId = Model.openid;
                                 var _userinfo=new b_tbUser().GetUserInfoBysWxOpenId(sWxOpenId);
                                 if (_userinfo.iUserId > 0)
+                                {
+                                    _userinfo.isweixin = true;
                                     Session["UserInfo"] = _userinfo;
+                                }
                                 else
                                     Alert.ShowClose("注册失败！");
                                 //增加微信号后台自动登录代码
