@@ -59,7 +59,13 @@ namespace VPC_2014_V001
             else
                 return 0;
         }
-
+        protected long GetParaLong(string para)
+        {
+            if (Request.QueryString[para] != null)
+                return long.Parse(Request.QueryString[para]);
+            else
+                return 0; 
+        }
         protected void BindOrderState(DropDownList ddl,int defaultvalue=0)
         {
             ddl.DataSource = b_Cache.GetStatus().Where(p => p.StateType == StateType.orderstate);

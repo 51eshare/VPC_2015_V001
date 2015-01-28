@@ -182,6 +182,8 @@
     <Content Include="Content\ui-dialog.css" />
     <Content Include="Content\widgets.css" />
     <Content Include="Customer\Commissionlist.aspx" />
+    <Content Include="Customer\AddUsed.aspx" />
+    <Content Include="Customer\UsedArea.aspx" />
     <Content Include="Customer\pickCommission.aspx" />
     <Content Include="Customer\Questions.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -1218,6 +1220,20 @@
     </Compile>
     <Compile Include="Customer\Commissionlist.aspx.designer.cs">
       <DependentUpon>Commissionlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\AddUsed.aspx.cs">
+      <DependentUpon>AddUsed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\AddUsed.aspx.designer.cs">
+      <DependentUpon>AddUsed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\UsedArea.aspx.cs">
+      <DependentUpon>UsedArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\UsedArea.aspx.designer.cs">
+      <DependentUpon>UsedArea.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\pickCommission.aspx.cs">
       <DependentUpon>pickCommission.aspx</DependentUpon>

@@ -15,10 +15,10 @@ namespace Entity
     {
         public tbUsedArea()
         {
-
+            photolist = new List<string>();
         }
         [Key]
-        public int ID { get; set;}
+        public long ID { get; set;}
         /// <summary>
         /// 商品名字
         /// </summary>
@@ -29,6 +29,7 @@ namespace Entity
         /// </summary>
         public int iPdClassId { get; set; }
 
+        [Editable(false)]
         /// <summary>
         /// 商品分类名称
         /// </summary>
@@ -39,6 +40,7 @@ namespace Entity
         /// </summary>
         public int iDistrict { get; set;}
 
+        [Editable(false)]
         /// <summary>
         /// 地区名称
         /// </summary>
@@ -59,16 +61,22 @@ namespace Entity
         /// </summary>
         private string _photos = string.Empty;
         public string photos {
-            get {
-                StringBuilder _sb = new StringBuilder();
-                if (_photolist.Count > 0)
+            get 
+            {
+                if (!string.IsNullOrWhiteSpace(_photos))
+                    return _photos;
+                else
                 {
-                    foreach (var item in _photolist)
+                    StringBuilder _sb = new StringBuilder();
+                    if (_photolist.Count > 0)
                     {
-                        _sb.Append(_sb.Length > 0 ? string.Concat(",", item) : item);
+                        foreach (var item in _photolist)
+                        {
+                            _sb.Append(_sb.Length > 0 ? string.Concat(",", item) : item);
+                        }
                     }
+                    return _sb.ToString();
                 }
-                return _sb.ToString();
             }
             set {
                 _photos = value;
@@ -80,7 +88,7 @@ namespace Entity
         public List<string> photolist{
             get {
                 if (!string.IsNullOrWhiteSpace(photos))
-                    return photos.Split(';').ToList();
+                    return photos.Split(',').ToList();
                 else
                     return new List<string>();
             }

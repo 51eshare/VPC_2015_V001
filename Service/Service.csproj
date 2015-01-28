@@ -76,6 +76,7 @@
     <Compile Include="b_tbShopRefProduct.cs" />
     <Compile Include="b_tbSlideshow.cs" />
     <Compile Include="b_tbStatus.cs" />
+    <Compile Include="b_tbUsedArea.cs" />
     <Compile Include="b_tbVendor.cs" />
     <Compile Include="b_vwProduct4Partner.cs" />
     <Compile Include="b_vwReceiveInfo.cs" />
