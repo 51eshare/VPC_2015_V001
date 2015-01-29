@@ -556,7 +556,8 @@
     <Content Include="kindeditor\asp.net\upload_json.ashx" />
     <Content Include="Email.config" />
     <Content Include="WEIXIN\JS_WEIXIN.js" />
-    <None Include="Properties\PublishProfiles\VPC.pubxml" />
+    <Content Include="WEIXIN_Login.aspx" />
+    <None Include="Properties\PublishProfiles\51eshare.com.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap-switch.js" />
@@ -1728,6 +1729,13 @@
     </Compile>
     <Compile Include="WEIXIN\mp.ashx.cs">
       <DependentUpon>mp.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WEIXIN_Login.aspx.cs">
+      <DependentUpon>WEIXIN_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WEIXIN_Login.aspx.designer.cs">
+      <DependentUpon>WEIXIN_Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
