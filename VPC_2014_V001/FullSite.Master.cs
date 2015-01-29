@@ -37,6 +37,7 @@ namespace VPC_2014_V001
                         _temp.Append("</ul></li>");
                         sb.Append(_temp.ToString());
                     }
+                    sb.AppendFormat(_li, "/customer/usedarealist", "二手区");
                     sb.AppendFormat(_li, "/Account/UserInfo", string.Concat("<i class=\"fa fa-user\">&nbsp;</i>", UserInfo.sLoginId));
                     sb.AppendFormat(_li, "/", "首页");
                     sb.AppendFormat(_li, "/Account/Login", "退出");

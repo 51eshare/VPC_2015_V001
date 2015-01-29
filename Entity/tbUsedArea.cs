@@ -112,5 +112,10 @@ namespace Entity
         /// </summary>
         [Editable(false)]
         public DateTime Dates{get;set;}
+
+        /// <summary>
+        /// 封面图片
+        /// </summary>
+        public string faceImg { get; set;}
     }
 }

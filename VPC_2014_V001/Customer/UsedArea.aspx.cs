@@ -28,7 +28,7 @@ namespace VPC_2014_V001.VPC.Customer
         {
             string _where = "a.iUserId=" + UserInfo.RealID, _sort = "a.ID desc";
             if (!string.IsNullOrWhiteSpace(UsedName.Text))
-                _where += string.IsNullOrWhiteSpace(_where) ? string.Concat("a.UsedName like '%", UsedName.Text,"%'") : string.Concat(" and a.UsedName like '%", UsedName.Text,"%'");
+                _where += string.Concat(" and a.UsedName like '%", UsedName.Text,"%'");
             var _paging = new p_PageList<tbUsedArea>();
             _paging.Fields = "a.*,b.cPdClass AS siPdClassId";
             _paging.OrderFields = _sort;
@@ -36,7 +36,7 @@ namespace VPC_2014_V001.VPC.Customer
             _paging.PageSize = aspnetpagerpaging.PageSize;
             _paging.Where = _where;
             _paging.Tables = @"tbUsedArea AS a INNER JOIN tbProductClass AS b ON a.iPdClassId=b.iPdClassId";
-            var _list = new b_tbQuestion().PageList<tbUsedArea>(_paging);
+            var _list = new b_tbUsedArea().PageList<tbUsedArea>(_paging);
             aspnetpagerpaging.RecordCount = _list.TotalCount;
             Repeater1.DataSource = _list.DataList;
             Repeater1.DataBind();

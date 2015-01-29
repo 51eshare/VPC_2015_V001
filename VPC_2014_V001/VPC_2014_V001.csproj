@@ -183,6 +183,8 @@
     <Content Include="Content\widgets.css" />
     <Content Include="Customer\Commissionlist.aspx" />
     <Content Include="Customer\AddUsed.aspx" />
+    <Content Include="Customer\UsedAreaView.aspx" />
+    <Content Include="Customer\usedarealist.aspx" />
     <Content Include="Customer\UsedArea.aspx" />
     <Content Include="Customer\pickCommission.aspx" />
     <Content Include="Customer\Questions.aspx" />
@@ -1227,6 +1229,20 @@
     </Compile>
     <Compile Include="Customer\AddUsed.aspx.designer.cs">
       <DependentUpon>AddUsed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\UsedAreaView.aspx.cs">
+      <DependentUpon>UsedAreaView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\UsedAreaView.aspx.designer.cs">
+      <DependentUpon>UsedAreaView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\usedarealist.aspx.cs">
+      <DependentUpon>usedarealist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\usedarealist.aspx.designer.cs">
+      <DependentUpon>usedarealist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\UsedArea.aspx.cs">
       <DependentUpon>UsedArea.aspx</DependentUpon>
