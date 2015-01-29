@@ -43,7 +43,6 @@
         //var arr = document.cookie.match(new RegExp("(^| )WXB=([^;]*)(;|$)"));
         //if (arr = null)
 
-        a = getCookie("WXB");
         c_start = document.cookie.indexOf("WXB=");
         if (c_start == -1) {
             if (is_weixin()) {
@@ -54,6 +53,20 @@
             };
         }
         else {
+            c_start=c_start + c_name.length+1 
+            c_end=document.cookie.indexOf(";",c_start)
+            if (c_end==-1) c_end=document.cookie.length
+            if (unescape(document.cookie.substring(c_start, c_end)) == '2') {
+            }
+            else
+            {
+                if (is_weixin()) {
+                    document.cookie = 'WXB=1'
+                }
+                else {
+                    document.cookie = 'WXB=0'
+                };
+            }
         }
 
     </script>
@@ -79,7 +92,7 @@
                     <div class="logo text-right">
                         <%if (UserInfo != null)
                           {%>
-                        <a href="/Customer/Default"><i class="fa fa-user fa-2x">&nbsp;</i>会员中心</a>
+                        <a href="/Customer"><i class="fa fa-user fa-2x">&nbsp;</i>会员中心</a>
                         <%}
                           else
                           {%>

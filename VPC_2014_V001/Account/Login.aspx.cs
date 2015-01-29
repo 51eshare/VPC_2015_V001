@@ -68,15 +68,14 @@ namespace VPC_2014_V001.VPC.Account
                 string _redirect = string.Empty;
                 Session["UserInfo"] = _userinfo;
                 if (_userinfo.UserType.Contains(9000))
-                    _redirect = "/Admin/";
+                    _redirect = "/Admin/Default";
                 else if (_userinfo.UserType.Contains(3000) || _userinfo.UserType.Contains(3001))
-                    _redirect = "/Partner/";
+                    _redirect = "/Partner/Default";
                 else if (_userinfo.UserType.Contains(5000))
-                    _redirect = "/Vendor/";
+                    _redirect = "/Vendor/Default";
                 else
-                    _redirect = "/Customer/";
+                    _redirect = "/Customer/ShopList";
 
-                _redirect = string.Concat(_redirect, "Default");
                 if (Request.QueryString["urlreferrer"] != null)
                     _redirect = StringDecode(Request.QueryString["urlreferrer"]);
                 Response.Redirect(_redirect);
