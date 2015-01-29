@@ -29,7 +29,7 @@ namespace VPC_2014_V001
                         {
                             HttpCookie cook = Request.Cookies["WXB"];
                             cook.Value = "2";
-                            Response.Redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + "wx7e2b2037bdda3a37" + "&redirect_uri=http://www.51eshare.com/weixin/OAuth1.aspx?reurl=" + Request.Url.AbsoluteUri + "&response_type=code&scope=snsapi_base&state=1#wechat_redirect");
+                            Response.Redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + "wx7e2b2037bdda3a37" + "&redirect_uri=" + Request.Url.AbsoluteUri + "&response_type=code&scope=snsapi_base&state=1#wechat_redirect");
                         }
                         else if (Request.Cookies["WXB"].Value.ToString() == "2")
                         {
