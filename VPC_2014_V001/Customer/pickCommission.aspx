@@ -4,14 +4,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="css" runat="server">
     <link href="/Content/ui-dialog.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="js" ClientIDMode="Static" runat="server">
     <script type="text/javascript">
         function check_price() {
-            if (!$("#nprice").val()) {
+            if (parseFloat($("#nprice").val()) <= 0) {
                 alert("请填写提现金额");
                 return false;
             }
-            else if ($("#nprice").val() > $("#allnprice").html()) {
+            else if (parseFloat($("#nprice").val()) > parseFloat($("#allnprice").html())) {
                 alert("提现金额应小于总金额");
                 return false;
             }
@@ -34,10 +34,11 @@
             <!-- Default panel contents -->
             <div class="panel-body">
                 <div class="row">
-                    <label class="col-md-2 control-label">总金额</label>
+                    <label class="col-md-2 control-label">账户余额</label>
                     <div class="col-md-2">
-                       <h3><label class="text-bold text-success label label-danger" id="allnprice" runat="server"></label>
-                        &nbsp;元</h3>
+                        <h3>
+                            <label class="text-bold text-success label label-danger" id="allnprice" runat="server"></label>
+                            &nbsp;元</h3>
                     </div>
                     <label class="col-md-2 control-label">提现金额</label>
                     <div class="col-md-1">
@@ -73,7 +74,7 @@
                             <headertemplate>
                         <thead>
                             <tr>
-                                <th>编码</th>
+                                <th>订单编号</th>
                                 <th>金额</th>
                                 <th>余额</th>
                                 <th>日期</th>

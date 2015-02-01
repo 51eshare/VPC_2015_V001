@@ -65,11 +65,9 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>编号</th>
                                     <th>主题</th>
-                                    <th>咨询人</th>
+                                    <th>来源</th>
                                     <th>时间</th>
-                                    <th>是否已经回复</th>
                                     <th>操作</th>
                                 </tr>
                             </thead>
@@ -77,17 +75,16 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td><%#Eval("iQuestionId")%></td>
                             <td><%#Eval("bTopic")%></td>
                             <td><%#Eval("sQuestionUserId")%></td>
                             <td class="text-overflow"><%#Eval("dDate","{0:yyyy-MM-dd hh:mm}")%></td>
-                            <td class='<%#Eval("bApply")%> text-bold'><%#Eval("sApply")%></td>
                             <td><a class='btn <%#bool.Parse(Eval("bApply").ToString())?"btn-success":"btn-danger" %>' href='Reply?iQuestionId=<%#Eval("iQuestionId")%>&urlreferrer=<%=StringEncode("/Vendor/Questions")%>'><%#bool.Parse(Eval("bApply").ToString())?"查看":"回复" %></a>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
                         </tbody>
             </table>
+                   
                     </FooterTemplate>
                 </asp:Repeater>
                 <div class="row div-display shop-margin text-center">

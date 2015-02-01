@@ -24,6 +24,7 @@ namespace VPC_2014_V001.VPC.Customer
                 var _info = new b_vwProduct4Partner().Get(iPdid);
                 if (_info != null && _info.iStatus == 2)
                 {
+                    _info.描述 = _info.描述.Replace("<img", "<img class=\"img-responsive\"");
                     CommonMethod.Entity_to_Controls(_info, ShopPdInfo);
                     if (UserInfo != null)
                     {
@@ -45,7 +46,7 @@ namespace VPC_2014_V001.VPC.Customer
 
         private bool gwc_ServerClick()
         {
-            IsLogin();
+                IsLogin();
                 var _tbShoppingCart = new tbShoppingCart();
                 _tbShoppingCart.iUserid = UserInfo.RealID;
                 _tbShoppingCart.iShopRefPdId = iPdid;

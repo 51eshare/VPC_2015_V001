@@ -16,21 +16,15 @@
                     <HeaderTemplate>
                         <thead>
                             <tr>
-                                <th>序号</th>
-                                <th>收货人姓名</th>
-                                <th>收货地址</th>
-                                <th>联系电话</th>
-                                <th>编辑 <a class="btn btn-sm btn-primary" href="RecieveEdit"><i class="fa fa-fw fa-plus"></i>添加</a></th>
+                                <th>收货信息</th>
+                                <th><a class="btn btn-sm btn-primary" href="RecieveEdit"><i class="fa fa-fw fa-plus"></i>添加</a></th>
                             </tr>
                             <tbody>
                         </thead>
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td><%#DataBinder.Eval(Container.DataItem,"iRecieveInfoId")%></td>
-                            <td><%#DataBinder.Eval(Container.DataItem,"sRecieveName")%></td>
-                            <td><%#DataBinder.Eval(Container.DataItem,"sAddress")%></td>
-                            <td><%#Eval("sPhoneNum")%></td>
+                            <td><%#DataBinder.Eval(Container.DataItem,"sRecieveName")%>/<%#Eval("sPhoneNum")%>/<%#DataBinder.Eval(Container.DataItem,"sAddress")%></td>
                             <td>
                                 <asp:Button ID="edit_row" CommandName="edit_row" Text="编辑" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"iRecieveInfoId")%>' CssClass="btn btn-sm btn-success" runat="server" />
                                 <asp:Button ID="del_row" Text="删除" CommandName="del_row" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"iRecieveInfoId")%>' CssClass="btn btn-sm btn-danger" runat="server" />

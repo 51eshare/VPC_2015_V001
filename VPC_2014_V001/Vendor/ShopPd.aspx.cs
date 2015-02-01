@@ -24,6 +24,7 @@ namespace VPC_2014_V001.VPC.Vendor
                 var _info = new b_vwProduct4Partner().GetById(iPdid);
                 if (_info != null && _info.iStatus == 2)
                 {
+                    _info.描述 = _info.描述.Replace("<img", "<img class=\"img-responsive\"");
                     CommonMethod.Entity_to_Controls(_info, ShopPdInfo);
                     if (UserInfo != null)
                     {

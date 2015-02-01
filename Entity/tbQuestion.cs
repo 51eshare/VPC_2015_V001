@@ -122,6 +122,19 @@ namespace Entity
         [Editable(false)]
         public string ReplyText { get; set;}
 
+
+        [Editable(false)]
+        /// <summary>
+        /// 回复人
+        /// </summary>
+        public string siReplyUserId { get; set;}
+
+        [Editable(false)]
+        /// <summary>
+        /// 回复时间
+        /// </summary>
+        public DateTime ReplyDate { get; set; }
+
         /// <summary>
         /// 服务费用
         /// </summary>

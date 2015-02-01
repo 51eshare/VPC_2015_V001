@@ -61,7 +61,7 @@ namespace Entity
         /// </summary>
         public long iUserId { get; set;}
 
-
+        [Editable(false)]
         public string sLoginId { get; set;}
 
         public int iState { get;set;}

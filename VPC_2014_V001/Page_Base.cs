@@ -130,5 +130,9 @@ namespace VPC_2014_V001
             }
             return _list;
         }
+        protected void DefaltPage()
+        {
+            Response.Redirect("/");
+        }
     }
 }

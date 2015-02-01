@@ -22,7 +22,10 @@ public class Upload : IHttpHandler
 
 	public void ProcessRequest(HttpContext context)
 	{
+        int _width = 0;
         string a = context.Request.Params["iVendorId"];
+        if (context.Request.Params["width"] != null)
+            _width = int.Parse(context.Request.Params["width"]);
 		//文件保存目录路径
         String savePath = "/Image/Vendor/" + a + "/";
         //文件保存目录URL
@@ -70,11 +73,11 @@ public class Upload : IHttpHandler
 
 		String newFileName = DateTime.Now.ToString("yyyyMMddHHmmss_ffff", DateTimeFormatInfo.InvariantInfo) + fileExt;
 		String filePath = dirPath + newFileName;
-
-		imgFile.SaveAs(filePath);
-
+        if (_width > 0)
+            Common.PicturDeal.MakeThumbnail(imgFile.InputStream, filePath, _width, 0, "W");
+        else
+            imgFile.SaveAs(filePath);
 		String fileUrl = saveUrl + newFileName;
-
 		Hashtable hash = new Hashtable();
 		hash["error"] = 0;
 		hash["url"] = fileUrl;

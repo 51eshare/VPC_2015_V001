@@ -329,24 +329,12 @@ namespace Entity
         public string sPhoneNum { get; set;}
         public string sStyle { get;set;}
         public DateTime Shippingdate { get; set;}
-        public string sExpressID { get; set;}
         public string No { get; set;}
         public int ReceivingStyle { get; set;}
         public string sReceivingStyle { get {
             return ReceivingStyle == 1 ? "手动" : "自动";
         } }
         public DateTime ReceivingDate { get; set;}
-
-        /// <summary>
-        /// 发票类型
-        /// 1：个人，2：公司
-        /// </summary>
-        public int BillType { get; set;}
-        /// <summary>
-        /// 公司抬头
-        /// </summary>
-        public string Comhead { get; set;}
-
 
     }
 }

@@ -1,12 +1,7 @@
-﻿using Common;
-using Entity;
+﻿using Entity;
 using Service;
 using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace VPC_2014_V001.VPC.Customer
@@ -18,12 +13,16 @@ namespace VPC_2014_V001.VPC.Customer
             if (!IsPostBack)
             {
                 IsLogin();
-                allnprice.InnerHtml = nprice.Text = new b_tbCommission().GetList().Where(p => p.iUserId == UserInfo.RealID).Sum(p => p.nprice).ToString();
+                loadprice();
                 loaddata();
                 Sname.Text = UserInfo.sLoginId;
                 ilipay.Text = UserInfo.ilipay;
                 mobile.Text = UserInfo.mobile;
             }
+        }
+        private void loadprice()
+        {
+            allnprice.InnerHtml = nprice.Text = new b_tbCommission().GetList().Where(p => p.iUserId == UserInfo.RealID).Sum(p => p.nprice).ToString();
         }
 
         protected void paging_PageChanged(object sender, EventArgs e)
@@ -59,18 +58,28 @@ namespace VPC_2014_V001.VPC.Customer
             }
             else
             {
-                var _tbpickCommission = new tbCommission();
-                _tbpickCommission.iUserId = UserInfo.RealID;
-                _tbpickCommission.iOrderId = 0;
-                _tbpickCommission.nprice = -decimal.Parse(nprice.Text);
-                _tbpickCommission.aprice = decimal.Parse(allnprice.InnerHtml) - decimal.Parse(nprice.Text);
-                _tbpickCommission.iState = 1;
-                _tbpickCommission.remark = "客户提现";
-                if (new b_tbCommission().Insert(_tbpickCommission).Value > 0)
+                var _nprice = new b_tbCommission().GetList().Where(p => p.iUserId == UserInfo.RealID).Sum(p => p.nprice);
+                if (_nprice >= decimal.Parse(nprice.Text))
                 {
-                    tipclass = string.Empty;
-                    message.Text = "提现正在处理中";
-                    loaddata();
+                    var _tbpickCommission = new tbCommission();
+                    _tbpickCommission.iUserId = UserInfo.RealID;
+                    _tbpickCommission.iOrderId = 0;
+                    _tbpickCommission.nprice = -decimal.Parse(nprice.Text);
+                    _tbpickCommission.aprice = decimal.Parse(allnprice.InnerHtml) - decimal.Parse(nprice.Text);
+                    _tbpickCommission.iState = 1;
+                    _tbpickCommission.remark = "客户提现";
+                    if (new b_tbCommission().Insert(_tbpickCommission).Value > 0)
+                    {
+                        tipclass = string.Empty;
+                        message.Text = "提现正在处理中";
+                        loaddata();
+                        loadprice();
+                    }
+                    else
+                    {
+                        tipclass = string.Empty;
+                        message.Text = "提现失败，请检查后再次提交";
+                    }
                 }
                 else
                 {

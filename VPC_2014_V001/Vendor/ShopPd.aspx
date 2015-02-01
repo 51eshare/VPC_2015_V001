@@ -59,7 +59,7 @@
                 <form id="ShopPdInfoForm" role="form" class="form-horizontal" runat="server">
                     <div class="input-group">
                         <span class="input-group-addon" style="width: 100px;">购买数量</span>
-                        <asp:TextBox class="form-control" ID="txtiOrderNum" runat="server" Style="width: 100px;" TextMode="Number" Text="">1</asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtiOrderNum" runat="server" Style="width: 100px;" TextMode="Number" Text="">1</asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfviOrderNum" runat="server" ErrorMessage="  * 必填" Display="Dynamic" ControlToValidate="txtiOrderNum" ForeColor="Red"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="rfvtxtiRegistCapital1" runat="server" ErrorMessage="  * 请填写整数" Display="Dynamic" ControlToValidate="txtiOrderNum" ForeColor="Red" ValidationExpression="^([1-9][0-9]*)$"></asp:RegularExpressionValidator>
                     </div>
@@ -102,7 +102,7 @@
             <li class=""><a data-toggle="tab" href="#tab2">商品统计</a></li>
             <li class=""><a data-toggle="tab" href="#tab3">咨询</a></li>
         </ul>
-        <div class="tab-content">
+        <div class="tab-content img-responsive">
             <!-- Description -->
             <div id="描述" class="tab-pane active" runat="server">
             </div>

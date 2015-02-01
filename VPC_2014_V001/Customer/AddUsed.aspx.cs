@@ -3,13 +3,9 @@ using Entity;
 using Service;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Text;
-using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
 using VPC_2014_V001.VPC.Account;
 
 namespace VPC_2014_V001.VPC.Customer
@@ -38,6 +34,7 @@ namespace VPC_2014_V001.VPC.Customer
                     CommonMethod.Entity_to_Controls(_tbUsedArea, InfoChangeForm);
                     iPdClassId.Value = _tbUsedArea.iPdClassId.ToString();
                     iDistrict.Value = _tbUsedArea.iDistrict.ToString();
+                    faceImg.Value = _tbUsedArea.faceImg;
                     if (_tbUsedArea.photolist.Count > 0)
                     {
                         for (int i = 0; i < _tbUsedArea.photolist.Count; i++)

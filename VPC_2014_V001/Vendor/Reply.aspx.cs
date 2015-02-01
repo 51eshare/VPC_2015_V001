@@ -41,7 +41,7 @@ namespace VPC_2014_V001.VPC.Vendor
             CommonMethod.Entity_to_Controls(_info,ReplyInfo);
             if (_info.bApply)
             {
-                divReplyText.Attributes["class"] = "row";
+                divsiReplyUserId.Attributes["class"] = divReplyDate.Attributes["class"] = divReplyText.Attributes["class"] = "row";
                 divReply.Attributes["class"] = "row hidden";
                 InfoReply.Attributes["class"] = "hidden";
             }

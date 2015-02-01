@@ -26,7 +26,6 @@ namespace VPC_2014_V001.VPC.Customer
                 loaddata();
             }
         }
-
         protected void paging_PageChanged(object sender, EventArgs e)
         {
             loaddata();
@@ -65,7 +64,26 @@ namespace VPC_2014_V001.VPC.Customer
 
         protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-
+            var _command = e.CommandName;
+            var _ipdid = e.CommandArgument.ToString();
+            if (_command.Equals("buy"))
+            {
+                IsLogin();
+                var _tbShoppingCart = new tbShoppingCart();
+                _tbShoppingCart.iUserid = UserInfo.RealID;
+                _tbShoppingCart.iShopRefPdId = long.Parse(_ipdid);
+                _tbShoppingCart.iOrderNum = 1;
+                if (new b_tbShoppingCart().add_updatetbShoppingCart(_tbShoppingCart))
+                {
+                    tipclass = string.Empty;
+                    message.Text = "购买成功！";
+                }
+                else
+                {
+                    tipclass = string.Empty;
+                    message.Text = "购买失败！";
+                }
+            }
         }
     }
 }

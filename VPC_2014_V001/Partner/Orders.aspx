@@ -70,6 +70,7 @@
                                     <th>订单日期/订单编号</th>
                                     <th>商品</th>
                                     <th>数量/金额</th>
+                                    <th>佣金</th>
                                     <th>订单状态</th>
                                 </tr>
                             </thead>
@@ -77,9 +78,10 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td class="text-overflow"><%#Eval("dDate","{0:yyyy-MM-dd}")%>/<a href="Order.aspx?iOrderId=<%#Eval("iOrderId")%>"><%#Eval("sOrderNum")%></a></td>
+                            <td class="text-overflow"><%#Eval("dDate","{0:yyyy-MM-dd}")%>/<a href="Order.aspx?iOrderId=<%#Eval("iOrderId")%>"><%#Eval("iOrderId")%></a></td>
                             <td><%#Eval("sPdName")%></td>
-                            <td><%#Eval("iOrderNum")%>/<%#Eval("fSaPrice")%></td>
+                            <td><%#Eval("iOrderNum")%>/<%#Eval("fSaPriceSum")%></td>
+                            <td><%#Eval("fCommissionSum")%></td>
                             <td class='<%#Eval("text_style")%> text-bold'><%#Eval("sStatus")%></td>
                         </tr>
                     </ItemTemplate>

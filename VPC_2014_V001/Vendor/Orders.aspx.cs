@@ -17,9 +17,23 @@ namespace VPC_2014_V001.VPC.Vendor
             {
                 IsLogin();
                 BindOrderState(state);
+                Parameter();
                 BindtbExpress(ExpressID);
                 loaddata();
             }
+        }
+
+        private void Parameter()
+        {
+            if (Request.QueryString["startdate"] != null)
+            {
+                startdate.Text = Request.QueryString["startdate"];
+                enddate.Text = Request.QueryString["enddate"];
+            }
+            if (Request.QueryString["numberno"] != null)
+                numberno.Text = Request.QueryString["numberno"];
+            if (Request.QueryString["state"] != null)
+                state.SelectedValue = Request.QueryString["state"];
         }
 
         protected void paging_PageChanged(object sender, EventArgs e)
@@ -32,7 +46,7 @@ namespace VPC_2014_V001.VPC.Vendor
             if (!string.IsNullOrWhiteSpace(startdate.Text.Trim()) && !string.IsNullOrWhiteSpace(enddate.Text.Trim()))
                 _where = string.Concat("a.dDate BETWEEN '", startdate.Text.Trim(), "' AND '", enddate.Text.Trim(), "'");
             if (!string.IsNullOrWhiteSpace(numberno.Text))
-                _where += string.IsNullOrWhiteSpace(_where) ? string.Concat("a.sOrderNum='", numberno.Text.Trim(), "'") : string.Concat(" and a.sOrderNum='", numberno.Text.Trim(), "'");
+                _where += string.IsNullOrWhiteSpace(_where) ? string.Concat("a.iOrderId='", numberno.Text.Trim(), "'") : string.Concat(" and a.iOrderId='", numberno.Text.Trim(), "'");
             if (!string.IsNullOrWhiteSpace(state.SelectedValue))
                 _where += string.IsNullOrWhiteSpace(_where) ? string.Concat("a.iStatus=", state.SelectedValue.Trim()) : string.Concat(" and a.iStatus=", state.SelectedValue.Trim());
             var _paging = new p_PageList<tbOrder>();

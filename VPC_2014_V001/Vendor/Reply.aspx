@@ -40,8 +40,20 @@
             <label id="sQuestionText" class="text-normal" runat="server"></label>
         </div>
     </div>
+    <div class="row hidden"  runat="server" id="divsiReplyUserId">
+       <label class="col-md-2 control-label text-center">回复人</label>
+        <div class="col-md-10">
+            <label id="siReplyUserId" class="text-normal" runat="server"></label>
+        </div>
+    </div>
+    <div class="row hidden"  runat="server" id="divReplyDate">
+       <label class="col-md-2 control-label text-center">回复时间</label>
+        <div class="col-md-10">
+            <label id="ReplyDate" class="text-normal" runat="server"></label>
+        </div>
+    </div>
     <div class="row hidden"  runat="server" id="divReplyText">
-       <label class="col-md-2 control-label text-center">问题描述</label>
+       <label class="col-md-2 control-label text-center">回复内容</label>
         <div class="col-md-10">
             <label id="ReplyText" class="text-normal" runat="server"></label>
         </div>

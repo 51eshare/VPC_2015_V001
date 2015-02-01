@@ -22,11 +22,11 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">商品分类</label>
             <div class="col-sm-8">
-            <input id="iPdClassId" runat="server" value="0" name="iPdClassId" type="hidden" />
-            <asp:DropDownList class="form-control input-width-20" ID="DropDownList7" runat="server"></asp:DropDownList>
-            <asp:DropDownList class="form-control input-width-20" ID="DropDownList8" runat="server"></asp:DropDownList>
-           </div>
-           <label id="DropDownList7_tip"></label>
+                <input id="iPdClassId" runat="server" value="0" name="iPdClassId" type="hidden" />
+                <asp:DropDownList class="form-control input-width-20" ID="DropDownList7" runat="server"></asp:DropDownList>
+                <asp:DropDownList class="form-control input-width-20" ID="DropDownList8" runat="server"></asp:DropDownList>
+            </div>
+            <label id="DropDownList7_tip"></label>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label">商品所在地</label>
@@ -45,7 +45,7 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">手机号</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="phone" runat="server" placeholder="最长25位"/>
+                <input type="text" class="form-control" id="phone" runat="server" placeholder="最长25位" />
             </div>
             <div id="phone_tip"></div>
         </div>
@@ -55,6 +55,18 @@
                 <textarea type="text" class="form-control" id="description" runat="server" placeholder="最长1000位" />
             </div>
             <div id="description_tip"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label" for="faceImg">封面图片</label>
+            <div class="col-lg-8">
+                <div class="col-lg-6">
+                    <input type="text" id="faceImg" runat="server" class="form-control" name="faceImg" value="" />
+                </div>
+                <div class="col-lg-2">
+                    <input type="button" id="faceImg_btn" class="btn btn-danger btn-sm" value="选择图片" />
+                </div>
+            </div>
+            <label id="faceImg_tip"></label>
         </div>
         <div class="form-group">
             <label class="col-lg-2 control-label" for="sShopDesc">商品图片1</label>
@@ -95,7 +107,7 @@
         <div class="form-group">
             <div class="col-sm-offset-4">
                 <input class="btn btn-primary btn-lg" runat="server" id="btn_add" onserverclick="btn_add_ServerClick" type="submit" value="提交" />
-               &#12288;<a href="UsedArea" class="btn btn-primary btn-lg">返回</a>
+                &#12288;<a href="UsedArea" class="btn btn-primary btn-lg">返回</a>
             </div>
         </div>
         <input type="hidden" id="iShopId" runat="server" value="0" />
@@ -112,6 +124,22 @@
                 uploadJson: '/kindeditor/asp.net/upload_json.ashx?iVendorId=<%=UserInfo.RealID%>',
                 fileManagerJson: '/kindeditor/asp.net/file_manager_json.ashx?iVendorId=<%=UserInfo.RealID%>',
                 allowFileManager: false
+            });
+            var faceimgeditor = K.editor({
+                uploadJson: '/kindeditor/asp.net/upload_json.ashx?iVendorId=<%=UserInfo.RealID%>&width=200',
+                fileManagerJson: '/kindeditor/asp.net/file_manager_json.ashx?iVendorId=<%=UserInfo.RealID%>',
+                allowFileManager: false
+            });
+            K('#faceImg_btn').click(function () {
+                faceimgeditor.loadPlugin('image', function () {
+                    faceimgeditor.plugin.imageDialog({
+                        imageUrl: K('#faceImg').val(),
+                        clickFn: function (url, title, width, height, border, align) {
+                            K('#faceImg').val(url);
+                            faceimgeditor.hideDialog();
+                        }
+                    });
+                });
             });
             K('#btn_sImagePath_1').click(function () {
                 editor.loadPlugin('image', function () {
@@ -161,6 +189,9 @@
                     <%=description.UniqueID%>: {
                         required: true,
                         maxlength:50
+                    },
+                    <%=faceImg.UniqueID%>: {
+                        required: true
                     }
                 },
                 messages:{
@@ -178,6 +209,10 @@
                              {
                                  required:"商品介绍不能为空",
                                  maxlength:"商品介绍不能超过{0}个字"
+                             },
+                    <%=faceImg.UniqueID%>: 
+                             {
+                                 required:"封面图片不能为空"
                              }
                 }, errorPlacement: function (error, element) {
                     $("#" + $(element).attr("id") + "*tip").html(error);

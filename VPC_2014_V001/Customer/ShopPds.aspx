@@ -3,20 +3,31 @@
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="ShopPds" role="form" runat="server">
-        <div class="jumbotron shop-product-margin form-group-min">
-            <h2><%=tbshop.sShopName%></h2>
-            <p><%=tbshop.sShopDesc%></p>
-            <p><a class="btn btn-primary" role="button">收藏</a></p>
+        <div class="alert alert-danger <%=tipclass%>" role="alert">
+            <a class="close" data-dismiss="alert">×</a>
+            <p>
+                <asp:Label ID="message" runat="server" Text=""></asp:Label>
+            </p>
         </div>
-        <div class="form-group form-group-min">
-            <div class="col-xs-8 col-md-3">
-                <input type="search" runat="server" id="where" class="form-control" placeholder="可输入店铺名称、描述">
+        <div class="row data-space">
+            <div class="col-md-2">
+                <img class="img-rounded"  height="100" width="100" src="<%=tbshop.sImagePath%>"/>
             </div>
-            <div class="ol-md-4">
+            <div class="col-md-10">
+                <h2><%=tbshop.sShopName%></h2>
+                <p><%=tbshop.sShopDesc%></p>
+                <p class="hidden"><a class="btn btn-primary" role="button">收藏</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <input type="search" runat="server" id="where" class="form-control" placeholder="可输入商品名称、描述">
+            </div>
+            <div class="col-md-6">
                 <button class="btn btn-primary" runat="server" onserverclick="btn_search_ServerClick" id="btn_search" type="button">查找</button>
             </div>
         </div>
-        <div class="form-group">
+        <div class="row">
             <div class="col-xs-8 col-md-3  data-space">
                 <asp:DropDownList ID="sort_where" runat="server" OnSelectedIndexChanged="sort_where_SelectedIndexChanged" CssClass="form-control" AutoPostBack="true">
                     <asp:ListItem Value="" Selected="True">--请选择排序方式--</asp:ListItem>
@@ -44,9 +55,7 @@
                             </div>
                         </div>
                         <div class="col-xs-3">
-                            <div class="btn-group">
-                                <a class="btn btn-default btn-lg" href='shoppd?ipdid=<%# DataBinder.Eval(Container.DataItem, "P") %>&shareuid=<%=UserInfo.RealID%>&shopid=<%#DataBinder.Eval(Container.DataItem, "微店Id")%>'>购买</a>
-                            </div>
+                                <asp:Button ID="buy" runat="server" CommandName="buy" CssClass="btn btn-primary btn-lg" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "P") %>'  Text="购买" />  
                         </div>
                     </div>
                 </ItemTemplate>

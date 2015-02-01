@@ -15,5 +15,11 @@ namespace Service
             string _sql = "UPDATE tbInfo SET [Enabled] =@Enabled WHERE ID=@ID";
             return Execute(_sql, new { Enabled = _info.Enabled, ID = _info.ID }) > 0;
         }
+        public tbInfo GetInfo(int infotype)
+        {
+            string _sql = "SELECT * FROM tbInfo WHERE InfoType=@InfoType";
+            DynamicParameter.Add("InfoType",infotype);
+            return Get(_sql, DynamicParameter);
+        }
     }
 }

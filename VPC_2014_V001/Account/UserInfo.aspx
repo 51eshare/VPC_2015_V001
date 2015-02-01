@@ -1,4 +1,4 @@
-﻿<%@ Page Title="个人信息" Language="C#" MasterPageFile="~/FullSite.Master" AutoEventWireup="true" CodeBehind="UserInfo.aspx.cs" Inherits="VPC_2014_V001.VPC.Account.UserInfo" %>
+﻿<%@ Page Title="资料修改" Language="C#" MasterPageFile="~/FullSite.Master" AutoEventWireup="true" CodeBehind="UserInfo.aspx.cs" Inherits="VPC_2014_V001.VPC.Account.UserInfo" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="css" runat="server">
 <link href="/Content/Site.css" rel="stylesheet" />
 <link href="/Content/admin.css" rel="stylesheet" />
@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                <div class="panel-heading">
                   <h3 class="panel-title">
-                     用户注册 
+                     资料修改 
                   </h3>
                </div>
                 <div class="panel-body">

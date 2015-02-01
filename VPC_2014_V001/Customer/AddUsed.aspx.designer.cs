@@ -121,6 +121,15 @@ namespace VPC_2014_V001.VPC.Customer {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea description;
         
         /// <summary>
+        /// faceImg 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText faceImg;
+        
+        /// <summary>
         /// sImagePath_1 控件。
         /// </summary>
         /// <remarks>

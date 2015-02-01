@@ -34,7 +34,30 @@
                 }
             });
             $('#myModal').on('hide.bs.modal', function () {
-                window.location.href = window.location.href;
+                var _startdate = $("#startdate").val();
+                var _enddate = $("#enddate").val();
+                var _numberno = $("#numberno").val();
+                var _state = $("#state").val();
+                var _parameter = "";
+                if (_startdate && _enddate)
+                {
+                    _parameter = "?startdate=" + _startdate + "&enddate=" + _enddate;
+                }
+                if (_numberno)
+                {
+                    if (_parameter.length > 0)
+                        _parameter += "&numberno=" + _numberno;
+                    else
+                        _parameter = "?numberno=" + _numberno;
+                }
+                if (_state) {
+                    if (_parameter.length > 0) {
+                        _parameter += "&state=" + _state;
+                    }
+                    else
+                        _parameter = "?state=" + _state;
+                }
+                window.location.href = window.location.pathname + _parameter;
             })
         });
     </script>

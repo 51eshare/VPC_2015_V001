@@ -7,63 +7,45 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace VPC_2014_V001.VPC.Customer {
+namespace VPC_2014_V001 {
     
     
-    public partial class ShopPds {
+    public partial class memberdetail {
         
         /// <summary>
-        /// message 控件。
+        /// info 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label message;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl info;
         
         /// <summary>
-        /// where 控件。
+        /// TTitle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl where;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TTitle;
         
         /// <summary>
-        /// btn_search 控件。
+        /// SDate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btn_search;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SDate;
         
         /// <summary>
-        /// sort_where 控件。
+        /// CContent 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList sort_where;
-        
-        /// <summary>
-        /// Repeater1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
-        
-        /// <summary>
-        /// aspnetpagerpaging 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::Wuqi.Webdiyer.AspNetPager aspnetpagerpaging;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CContent;
     }
 }

@@ -13,7 +13,7 @@
                         <% var _tbSlideshow = b_Cache.GettbSlideshows();%>
                         <% foreach (var item in _tbSlideshow)
                        {%>
-                        <li style="float: left;margin-right: -100%;position: relative; display: list-item;">
+                        <li class="img-responsive">
                             <!-- Image -->
                             <img alt="" src="<%=item.Img%>">
                             <!-- Caption -->
@@ -46,7 +46,7 @@
                         <div class="onethree-right">
                             <!-- Title and meta -->
                             <% var Partner = b_Cache.GettbInfo().SingleOrDefault(p => p.InfoType == 1);%>
-                            <h5><a href="javascript:void(0);"><%=Partner.TTitle%></a></h5>
+                            <h5><a href="/memberdetail?infotype=1"><%=Partner.TTitle%></a></h5>
                             <p class="meta"><%=Partner.CContent%></p>
                             <div class="button" runat="server" id="partner"><a href="/Partner/Regist">加入微店主</a></div>
                         </div>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="onethree-right">
                             <% var Vendor = b_Cache.GettbInfo().SingleOrDefault(p => p.InfoType == 4);%>
-                            <h5><a href="javascript:void(0);"><%=Vendor.TTitle%></a></h5>
+                            <h5><a href="/memberdetail?infotype=4"><%=Vendor.TTitle%></a></h5>
                             <p class="meta"><%=Vendor.CContent%></p>
                             <div class="button" runat="server" id="vendor"><a href="/Vendor/Regist">加入商家</a></div>
                         </div>

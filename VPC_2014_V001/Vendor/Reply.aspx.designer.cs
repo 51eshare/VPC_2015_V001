@@ -76,6 +76,42 @@ namespace VPC_2014_V001.VPC.Vendor {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl sQuestionText;
         
         /// <summary>
+        /// divsiReplyUserId 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divsiReplyUserId;
+        
+        /// <summary>
+        /// siReplyUserId 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl siReplyUserId;
+        
+        /// <summary>
+        /// divReplyDate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divReplyDate;
+        
+        /// <summary>
+        /// ReplyDate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ReplyDate;
+        
+        /// <summary>
         /// divReplyText 控件。
         /// </summary>
         /// <remarks>

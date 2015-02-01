@@ -533,6 +533,7 @@
     <Content Include="kindeditor\themes\qq\editor.gif" />
     <Content Include="kindeditor\themes\qq\qq.css" />
     <Content Include="kindeditor\themes\simple\simple.css" />
+    <Content Include="memberdetail.aspx" />
     <Content Include="onpay\Alipay\default.aspx" />
     <Content Include="onpay\Alipay\images\alipay.gif" />
     <Content Include="onpay\Alipay\images\new-btn-fixed.png" />
@@ -1282,6 +1283,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="memberdetail.aspx.cs">
+      <DependentUpon>memberdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberdetail.aspx.designer.cs">
+      <DependentUpon>memberdetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="M_Base.cs">
       <SubType>ASPXCodeBehind</SubType>

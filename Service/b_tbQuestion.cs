@@ -13,10 +13,11 @@ namespace Service
        public tbQuestion GetQuestion(long iQuestionId)
        {
            DynamicParameter.Add("iQuestionId", iQuestionId);
-           string _sql = @"SELECT  a.*,b.sLoginId as 'sQuestionUserId',c.sReplyText ReplyText 
+           string _sql = @"SELECT  a.*,b.sLoginId as 'sQuestionUserId',c.sReplyText ReplyText,d.sLoginId AS siReplyUserId,c.dDate AS ReplyDate
             FROM tbQuestion AS a
         INNER JOIN tbUser AS b ON a.iQuestionUserId=b.iUserId
         LEFT OUTER JOIN tbReply AS c ON a.iQuestionId=c.iQuestionId
+        LEFT OUTER JOIN tbUser AS d ON c.iReplyUserId=d.iUserId
                     WHERE a.iQuestionId=@iQuestionId";
                     return Get(_sql,DynamicParameter);
        }

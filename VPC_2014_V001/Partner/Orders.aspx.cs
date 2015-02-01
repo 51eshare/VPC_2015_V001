@@ -35,7 +35,7 @@ namespace VPC_2014_V001.VPC.Partner
             if (!string.IsNullOrWhiteSpace(state.SelectedValue))
                 _where += string.IsNullOrWhiteSpace(_where) ? string.Concat("a.iStatus=", state.SelectedValue.Trim()) : string.Concat(" and a.iStatus=", state.SelectedValue.Trim());
             var _paging = new p_PageList<tbOrder>();
-            _paging.Fields = "a.iOrderId,a.dDate,c.sPdName,a.iOrderNum,a.iOrderNum*a.fSaPrice fSaPrice,d.sStatus,a.sOrderNum";
+            _paging.Fields = "a.iOrderId,a.dDate,c.sPdName,a.iOrderNum,a.fSaPriceSum,a.fCommissionSum,d.sStatus,a.sOrderNum";
             _paging.OrderFields = _sort;
             _paging.PageIndex = aspnetpagerpaging.CurrentPageIndex;
             _paging.PageSize = aspnetpagerpaging.PageSize;

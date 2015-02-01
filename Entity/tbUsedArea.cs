@@ -44,7 +44,7 @@ namespace Entity
         /// <summary>
         /// 地区名称
         /// </summary>
-        public int siDistrict { get; set;}
+        public string siDistrict { get; set;}
 
         /// <summary>
         /// 描述

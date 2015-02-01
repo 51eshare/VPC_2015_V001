@@ -24,7 +24,7 @@
                 <button class="btn btn-primary" runat="server" onserverclick="btn_search_ServerClick" id="btn_search" type="button">查找</button>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group hidden">
             <div class="col-xs-8 col-md-3  data-space">
                 <asp:DropDownList ID="sort_where" runat="server" OnSelectedIndexChanged="btn_search_ServerClick" CssClass="form-control" AutoPostBack="true">
                     <asp:ListItem  Value="" Selected="True">--请选择排序方式--</asp:ListItem>
@@ -41,23 +41,19 @@
                     <div class="row div_bottom div-display shop-margin">
                         <div class="col-xs-3">
                             <div class="thumbnail">
-                                <img src='<%# DataBinder.Eval(Container.DataItem, "图片") %>' class="img-rounded" height="100" width="100">
+                               <a href='ShopPds.aspx?iShopId=<%# DataBinder.Eval(Container.DataItem, "店铺Id") %>' class="btn btn-default" target="_self"><img src='<%# DataBinder.Eval(Container.DataItem, "图片") %>' class="img-rounded" height="100" width="100"/></a>
                             </div>
                         </div>
                         <div class="col-xs-6">
                             <div class="caption">
                                 店铺名称：<%# DataBinder.Eval(Container.DataItem, "店铺名称") %><br />
                                 店铺描述：<%# DataBinder.Eval(Container.DataItem, "店铺描述") %><br />
-                                收藏状态：<label class='<%#long.Parse(Eval("iCollectId").ToString())>0?"text-success":"text-danger"%>'><%#long.Parse(Eval("iCollectId").ToString())>0?"已收藏":"未收藏"%></label><br />
-                                总销量：<%# DataBinder.Eval(Container.DataItem, "总销量") %><br />
-                                关注度：<%# DataBinder.Eval(Container.DataItem, "总关注量") %><br />
+                                总销量：<%# DataBinder.Eval(Container.DataItem, "总销量") %>&#12288;关注度：<%# DataBinder.Eval(Container.DataItem, "总关注量") %><br />
                             </div>
                         </div>
                         <div class="col-xs-3">
-                            <div class="btn-group">
-                                <a href='ShopPds.aspx?iShopId=<%# DataBinder.Eval(Container.DataItem, "店铺Id") %>' class="btn btn-default" target="_self">查看</a>
+                                <a href='ShopPds.aspx?iShopId=<%# DataBinder.Eval(Container.DataItem, "店铺Id") %>' class="btn btn-default hidden" target="_self">查看</a>
                                 <asp:Button ID="Collect" runat="server" CssClass="btn btn-success" Text="收藏" CommandName='<%# DataBinder.Eval(Container.DataItem, "iCollectId") %>' CommandArgument='<%# DataBinder.Eval(Container.DataItem, "店铺Id") %>' />
-                            </div>
                         </div>
                     </div>
 
