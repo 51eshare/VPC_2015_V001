@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="订单列表" Language="C#" MasterPageFile="~/FullSite.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="VPC_2014_V001.VPC.Vendor.Default" %>
+
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
     <script src="/Scripts/bootstrap-datetimepicker.zh-CN.js"></script>
@@ -79,7 +80,8 @@
                             <td><%#Eval("sPdName")%></td>
                             <td><%#Eval("iOrderNum")%>/<%#Eval("fSaPrice")%></td>
                             <td class='<%#Eval("text_style")%> text-bold'><%#Eval("sStatus")%></td>
-                            <td><asp:Button Text="发货" CssClass="btn btn-danger" Enabled='<%#!Eval("iStatus").ToString().Equals("6")%>' runat="server" ID="fahuo" CommandName="fahuo" CommandArgument='<%#Eval("iOrderId")%>'/></td>
+                            <td>
+                                <asp:Button Text="发货" CssClass="btn btn-danger" Enabled='<%#!Eval("iStatus").ToString().Equals("6")%>' runat="server" ID="fahuo" CommandName="fahuo" CommandArgument='<%#Eval("iOrderId")%>' /></td>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>

@@ -25,19 +25,19 @@
                 <HeaderTemplate></HeaderTemplate>
                 <ItemTemplate>
                     <div class="row  div_bottom div-display shop-margin">
-                        <div class="col-xs-3">
+                        <div class="col-md-3">
                             <a href='ShopPd.aspx?iPdid=<%# DataBinder.Eval(Container.DataItem, "P") %>'>
-                            <img src='<%# DataBinder.Eval(Container.DataItem, "图片") %>' height="100" width="100"/>
+                            <img src='<%# DataBinder.Eval(Container.DataItem, "图片") %>' class="img-rounded imgouter" />
                             </a>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <div class="caption">
                                 商品名称：<%# DataBinder.Eval(Container.DataItem, "商品名称") %><br />
                                 前台售价：<%# DataBinder.Eval(Container.DataItem, "前台售价") %><br />
                                 佣金：<%# DataBinder.Eval(Container.DataItem, "佣金") %><br />
                             </div>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-md-3">
                             <div class="btn-group">
                                 <a class="btn btn-default btn-lg" href='ShopPd.aspx?iPdid=<%# DataBinder.Eval(Container.DataItem, "P") %>'>购买</a>
                             </div>

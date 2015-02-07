@@ -29,6 +29,7 @@ namespace Service
         }
         #endregion 
 
+        #region 所有微店
         /// <summary>
         /// 所有微店
         /// </summary>
@@ -37,6 +38,7 @@ namespace Service
         {
             return MemoryCache.Default.Get(Cache_Key.tbshops, Cache_Key.Time, () => new b_tbShop().GetList());
         }
+        #endregion
 
         #region 状态表
         /// <summary>
@@ -105,6 +107,7 @@ namespace Service
         }
         #endregion 
 
+        #region 快递公司列表
         /// <summary>
         /// 快递公司列表
         /// </summary>
@@ -113,6 +116,7 @@ namespace Service
         {
             return MemoryCache.Default.Get(Cache_Key.tbexpress, Cache_Key.Time, () => new b_tbExpress().GetList());
         }
+        #endregion 
 
         #region 移除数据
         public static void RemoveData(string cache_key)

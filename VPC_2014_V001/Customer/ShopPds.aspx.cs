@@ -23,6 +23,7 @@ namespace VPC_2014_V001.VPC.Customer
             tbshop = b_Cache.GetShops().SingleOrDefault(p => p.iShopId == iShopId);
             if (!IsPostBack)
             {
+                shoplogo.Visible = !(iShopId == 13);
                 loaddata();
             }
         }

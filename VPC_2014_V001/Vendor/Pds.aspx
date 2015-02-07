@@ -24,11 +24,11 @@
                 <HeaderTemplate></HeaderTemplate>
                 <ItemTemplate>
                     <div class="row div_bottom div-display shop-margin">
-                        <div class="col-xs-3">
+                        <div class="col-md-3">
                             <a href="ShopPd?iPdId=<%# DataBinder.Eval(Container.DataItem, "iPdId") %>" target="_blank">
-                            <img src='<%# DataBinder.Eval(Container.DataItem, "sImagePath") %>' height="100" width="100"></a>
+                                <img src='<%# DataBinder.Eval(Container.DataItem, "sImagePath") %>' class="img-responsive imgouter"></a>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <div class="caption">
                                 商品名称:<%# DataBinder.Eval(Container.DataItem, "sPdName") %>
                                 <br />
@@ -41,7 +41,7 @@
                                 状态:<%# DataBinder.Eval(Container.DataItem, "sStatus") %>
                             </div>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-md-3">
                             <div class="btn-group">
                                 <a class="btn btn-default" href='PdAdd?iPdId=<%# DataBinder.Eval(Container.DataItem, "iPdId") %>'>编辑</a>
                                 <asp:Button ID="btn_check_up" CssClass="btn btn-primary" runat="server" Text="上架" CommandName="up" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "iPdId") %>' />

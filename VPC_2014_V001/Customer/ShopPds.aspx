@@ -9,7 +9,7 @@
                 <asp:Label ID="message" runat="server" Text=""></asp:Label>
             </p>
         </div>
-        <div class="row data-space">
+        <div class="row data-space" runat="server" id="shoplogo">
             <div class="col-md-2">
                 <img class="img-rounded"  height="100" width="100" src="<%=tbshop.sImagePath%>"/>
             </div>
@@ -43,8 +43,8 @@
                 <ItemTemplate>
                     <div class="row  div_bottom div-display shop-margin">
                         <div class="col-xs-3">
-                            <a href='shoppd?ipdid=<%# DataBinder.Eval(Container.DataItem, "P") %>&shareuid=<%=UserInfo.RealID%>&shopid=<%#DataBinder.Eval(Container.DataItem, "微店Id")%>'>
-                                <img src='<%# DataBinder.Eval(Container.DataItem, "图片") %>' height="100" width="100" />
+                            <a href='shoppd?ipdid=<%# DataBinder.Eval(Container.DataItem, "P") %>&shareuid=<%=UserInfo==null?0:UserInfo.RealID%>&shopid=<%#DataBinder.Eval(Container.DataItem, "微店Id")%>'>
+                                <img src='<%# DataBinder.Eval(Container.DataItem, "图片") %>' class="img-rounded imgouter" />
                             </a>
                         </div>
                         <div class="col-xs-6">

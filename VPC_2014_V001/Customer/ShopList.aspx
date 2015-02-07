@@ -10,11 +10,11 @@
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="shoplist" role="form" runat="server">
-        <div class="alert alert-danger <%=tipclass%>"  role="alert">
-        <a class="close" data-dismiss="alert">×</a>
-        <p>
-            <asp:Label ID="message" runat="server" Text=""></asp:Label>
-        </p>
+        <div class="alert alert-danger <%=tipclass%>" role="alert">
+            <a class="close" data-dismiss="alert">×</a>
+            <p>
+                <asp:Label ID="message" runat="server" Text=""></asp:Label>
+            </p>
         </div>
         <div class="form-group form-group-min hidden">
             <div class="col-xs-8 col-md-3">
@@ -27,7 +27,7 @@
         <div class="form-group hidden">
             <div class="col-xs-8 col-md-3  data-space">
                 <asp:DropDownList ID="sort_where" runat="server" OnSelectedIndexChanged="btn_search_ServerClick" CssClass="form-control" AutoPostBack="true">
-                    <asp:ListItem  Value="" Selected="True">--请选择排序方式--</asp:ListItem>
+                    <asp:ListItem Value="" Selected="True">--请选择排序方式--</asp:ListItem>
                     <asp:ListItem Value="a.总销量 desc">销量优先</asp:ListItem>
                     <asp:ListItem Value="a.总关注量 desc">关注优先</asp:ListItem>
                 </asp:DropDownList>
@@ -35,25 +35,24 @@
         </div>
         <!-- /input-group -->
         <div class="container-fluid">
-            <asp:Repeater ID="Repeater1" runat="server"  OnItemDataBound="Repeater1_ItemDataBound" OnItemCommand="Repeater1_ItemCommand">
+            <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound" OnItemCommand="Repeater1_ItemCommand">
                 <HeaderTemplate></HeaderTemplate>
                 <ItemTemplate>
                     <div class="row div_bottom div-display shop-margin">
-                        <div class="col-xs-3">
-                            <div class="thumbnail">
-                               <a href='ShopPds.aspx?iShopId=<%# DataBinder.Eval(Container.DataItem, "店铺Id") %>' class="btn btn-default" target="_self"><img src='<%# DataBinder.Eval(Container.DataItem, "图片") %>' class="img-rounded" height="100" width="100"/></a>
-                            </div>
+                        <div class="col-md-3 col-sm-2">
+                            <a href='ShopPds.aspx?iShopId=<%# DataBinder.Eval(Container.DataItem, "店铺Id") %>' class="btn btn-default" target="_self">
+                                <img src='<%# DataBinder.Eval(Container.DataItem, "图片") %>' class="img-rounded imgouter" /></a>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-md-6  col-sm-8">
                             <div class="caption">
                                 店铺名称：<%# DataBinder.Eval(Container.DataItem, "店铺名称") %><br />
                                 店铺描述：<%# DataBinder.Eval(Container.DataItem, "店铺描述") %><br />
                                 总销量：<%# DataBinder.Eval(Container.DataItem, "总销量") %>&#12288;关注度：<%# DataBinder.Eval(Container.DataItem, "总关注量") %><br />
                             </div>
                         </div>
-                        <div class="col-xs-3">
-                                <a href='ShopPds.aspx?iShopId=<%# DataBinder.Eval(Container.DataItem, "店铺Id") %>' class="btn btn-default hidden" target="_self">查看</a>
-                                <asp:Button ID="Collect" runat="server" CssClass="btn btn-success" Text="收藏" CommandName='<%# DataBinder.Eval(Container.DataItem, "iCollectId") %>' CommandArgument='<%# DataBinder.Eval(Container.DataItem, "店铺Id") %>' />
+                        <div class="col-md-3  col-sm-2">
+                            <a href='ShopPds.aspx?iShopId=<%# DataBinder.Eval(Container.DataItem, "店铺Id") %>' class="btn btn-default hidden" target="_self">查看</a>
+                            <asp:Button ID="Collect" runat="server" CssClass="btn btn-success" Text="收藏" CommandName='<%# DataBinder.Eval(Container.DataItem, "iCollectId") %>' CommandArgument='<%# DataBinder.Eval(Container.DataItem, "店铺Id") %>' />
                         </div>
                     </div>
 

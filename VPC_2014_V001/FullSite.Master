@@ -35,6 +35,7 @@
     <link href="/Content/admin.css" rel="stylesheet">
     <!-- Widgets stylesheet -->
     <link href="/Content/widgets.css" rel="stylesheet">
+    <link href="/Content/global.css" rel="stylesheet" />
     <script src="/Content/respond.min.js"></script>
     <!--[if lt IE 9]>
   <script src="/Scripts/html5shiv.js"></script>
@@ -45,14 +46,26 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
-            <!-- Menu button for smallar screens -->
-            <nav class="navbar">
-                <ul class="nav nav-tabs pull-right">
-                    <%=sb.ToString()%>
-                </ul>
-            </nav>
-    </div>
+   <div id="left-flyout-nav" class="layout-left-flyout visible-sm-sm"></div>
+
+<div class="layout-right-content">
+	<header class="the-header">
+		<div class="navbar container">
+		
+			<!-- Trigger -->
+			<a class="btn-navbar btn-navbar-navtoggle btn-flyout-trigger" href="javascript:;">
+				<span class="icon-bar btn-flyout-trigger"></span>
+				<span class="icon-bar btn-flyout-trigger"></span>
+				<span class="icon-bar btn-flyout-trigger"></span>
+			</a>
+		
+			<!-- Structure -->
+			<nav class="the-nav nav-collapse clearfix">
+				<%=sb.ToString()%>
+			</nav>
+		</div>
+	</header>
+</div>
 
     <!-- Main content starts -->
 
@@ -140,6 +153,7 @@
     <!-- Custom codes -->
     <script src="/Scripts/charts.js"></script>
     <!-- Charts & Graphs -->
+    <script src="/Scripts/jquery.cbFlyout.js"></script>
     <!-- Script for this page -->
     <script type="text/javascript">
         $(function () {
@@ -163,7 +177,7 @@
                 steps = $(this).val().indexOf("steps") != -1;
                 plotWithOptions();
             });
-
+            $('.the-nav').cbFlyout();
             /* Bar chart ends */
         });
         /* Curve chart starts */

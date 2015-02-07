@@ -233,7 +233,9 @@ text-decoration:none;
 	text-align: center;
 	line-height: 30px;
 }
-
+.membertype a, .membertype a:visited {
+    color: #000!important;
+}
 .totop a:hover {
 	color: #fff;
 	text-decoration: none;
@@ -266,12 +268,12 @@ text-decoration:none;
 
 .onethree-left{
 	float: left;
-	width: 23%;
+	width: 13%;
 }
 
 .onethree-right{
 	float: right;
-	width: 76%;
+	width: 86%;
 }
 
 /* Half column */
@@ -303,7 +305,6 @@ text-decoration:none;
 .container{
    max-width:980px;
 }
-
 /* Header */
 
 header{

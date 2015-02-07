@@ -13,7 +13,6 @@ namespace VPC_2014_V001
     {
         public M_Base()
         {
-
         }
         #region 网站信息
         /// <summary>

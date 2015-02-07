@@ -31,12 +31,39 @@ namespace VPC_2014_V001.VPC.Vendor {
         protected global::System.Web.UI.WebControls.Label message;
         
         /// <summary>
+        /// bTopic 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText bTopic;
+        
+        /// <summary>
+        /// siUserId 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText siUserId;
+        
+        /// <summary>
+        /// sQuestionText 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea sQuestionText;
+        
+        /// <summary>
         /// btn_add 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton btn_add;
+        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit btn_add;
     }
 }

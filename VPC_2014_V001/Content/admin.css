@@ -2,9 +2,9 @@ body {
     font-size: 12px;
     line-height: 22px;
     color: #666;
-    border-top: 3px solid #eee;
-    background: #343434 url("../img/back.png") repeat;
-    padding-top: 47px;
+    /*border-top: 3px solid #eee;*/
+    background: #343434 url("/img/back.png") repeat;
+    /*padding-top: 47px;*/
     -webkit-font-smoothing: antialiased;
 }
 
@@ -14,7 +14,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 2px 0px;
     color: #777;
 }
-
+.imgouter {
+    max-height:180px;
+    max-width:180px;
+}
 h2 {
     font-size: 25px;
     line-height: 35px;
@@ -427,7 +430,7 @@ form {
 
 /* Navbar */
 .navbar * {
-    font-weight: normal !important;
+    font-weight: bold !important;
     text-shadow: none !important;
 }
 
@@ -506,10 +509,10 @@ form {
 /* Header */
 
 header {
-    border-top: 1px solid #ccc;
-    padding: 25px 0px 15px 0px;
-    background: #fafafa url("../img/cream.png") repeat;
-    border-bottom: 1px solid #ddd;
+    /*border-top: 1px solid #ccc;*/
+    /*padding: 25px 0px 15px 0px;*/
+    background: #fafafa url("/img/cream.png") repeat;
+    /*border-bottom: 1px solid #ddd;*/
 }
 
     header .container {
@@ -1720,7 +1723,7 @@ footer {
 
     header {
         padding-top: 0px !important;
-        padding-bottom: 20px !important;
+        /*padding-bottom: 20px !important;*/
     }
 
         header .logo {

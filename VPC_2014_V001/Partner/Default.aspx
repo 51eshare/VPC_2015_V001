@@ -44,17 +44,17 @@
                 <ItemTemplate>
 
                     <div class="row  div_bottom div-display shop-margin">
-                        <div class="col-xs-3">
-                            <a href='/Vendor/Pd?iPdId=<%# DataBinder.Eval(Container.DataItem, "iPdId") %>&urlreferrer=<%=StringEncode("/Partner/ShopPds")%>&operate=<%=StringEncode("view")%>' target="_top"><img src='<%# DataBinder.Eval(Container.DataItem, "sImagePath") %>' class="img-rounded" height="100" width="100"></a>
+                        <div class="col-md-3">
+                            <a href='/Vendor/ShopPd?iPdId=<%# DataBinder.Eval(Container.DataItem, "iPdId") %>&urlreferrer=<%=StringEncode("/Partner/ShopPds")%>&operate=<%=StringEncode("view")%>' target="_top"><img src='<%# DataBinder.Eval(Container.DataItem, "sImagePath") %>' class="img-rounded imgouter"></a>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <div class="caption">
                                 商品名称：<%# DataBinder.Eval(Container.DataItem, "sPdName") %><br />
                                 前台售价：<%# DataBinder.Eval(Container.DataItem, "fSaPrice") %><br />
                                 佣金：<%# DataBinder.Eval(Container.DataItem, "fCommission") %><br />
                             </div>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-md-3">
                             <div class="btn-group">
                                 <asp:Button ID="sj" runat="server" Text="上架" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "iPdId") %>' CssClass="btn btn-primary" />
                             </div>

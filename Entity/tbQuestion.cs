@@ -16,6 +16,7 @@ namespace Entity
 		{
             ServicePrice = 0;
             ServiceDate = DateTime.Now;
+            _iobjectid = 0;
         }
 		#region Model
 		private long _iquestionid;
@@ -57,9 +58,9 @@ namespace Entity
 		}
         [Editable(false)]
         public string sQuestionUserId { get; set;}
-        [Editable(false)]
 		/// <summary>
-		/// 
+		/// 1:商品咨询
+        /// 2:站内咨询
 		/// </summary>
         public int iQuestionType
 		{

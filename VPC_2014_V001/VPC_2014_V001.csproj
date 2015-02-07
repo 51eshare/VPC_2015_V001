@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\Vendor\image\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\global.css" />
     <Content Include="Content\green.css" />
     <Content Include="Content\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -190,6 +192,73 @@
     <Content Include="Customer\Questions.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Image\Vendor\10022\201411\20141130160322_7627.png" />
+    <Content Include="Image\Vendor\10022\201411\20141130170630_7552.png" />
+    <Content Include="Image\Vendor\10022\201411\20141130170829_0199.png" />
+    <Content Include="Image\Vendor\10022\201411\20141130170953_1835.png" />
+    <Content Include="Image\Vendor\10022\201411\20141130171211_4573.png" />
+    <Content Include="Image\Vendor\10023\201412\20141201111051_4058.jpg" />
+    <Content Include="Image\Vendor\10023\201412\20141201111704_5964.jpg" />
+    <Content Include="Image\Vendor\10023\201412\20141201111806_5432.png" />
+    <Content Include="Image\Vendor\10023\201412\20141201111825_5175.jpg" />
+    <Content Include="Image\Vendor\10023\201412\20141208102936_6256.jpg" />
+    <Content Include="Image\Vendor\10023\201412\20141208103045_3948.jpg" />
+    <Content Include="Image\Vendor\10023\201502\20150203075911_7137.jpg" />
+    <Content Include="Image\Vendor\10023\201502\20150203075927_2680.jpg" />
+    <Content Include="Image\Vendor\10024\201412\20141208103615_9088.jpg" />
+    <Content Include="Image\Vendor\10024\201412\20141208111355_3324.jpg" />
+    <Content Include="Image\Vendor\10024\201412\20141208232818_9145.png" />
+    <Content Include="Image\Vendor\10024\201412\20141209142907_3127.jpg" />
+    <Content Include="Image\Vendor\10024\201412\20141209142923_3221.jpg" />
+    <Content Include="Image\Vendor\10025\201412\20141208112733_3300.jpg" />
+    <Content Include="Image\Vendor\10028\201412\20141209140430_3948.jpg" />
+    <Content Include="Image\Vendor\10031\201412\20141219233149_1250.png" />
+    <Content Include="Image\Vendor\10031\201412\20141223215848_2237.jpg" />
+    <Content Include="Image\Vendor\10031\201501\20150108235117_4304.jpg" />
+    <Content Include="Image\Vendor\10031\201501\20150108235723_5913.jpg" />
+    <Content Include="Image\Vendor\10032\201412\20141212122755_8073.jpg" />
+    <Content Include="Image\Vendor\10038\201412\20141231103715_0496.jpg" />
+    <Content Include="Image\Vendor\10040\201501\20150105225913_5002.jpg" />
+    <Content Include="Image\Vendor\10040\201501\20150105230016_2188.jpg" />
+    <Content Include="Image\Vendor\10040\201501\20150105230330_2158.jpg" />
+    <Content Include="Image\Vendor\10040\201501\20150105231358_6368.jpg" />
+    <Content Include="Image\Vendor\10043\201501\20150112124329_5877.jpg" />
+    <Content Include="Image\Vendor\10043\201501\20150112124340_0022.jpg" />
+    <Content Include="Image\Vendor\10043\201501\20150119125758_7401.jpg" />
+    <Content Include="Image\Vendor\10043\201501\20150119140741_4803.jpg" />
+    <Content Include="Image\Vendor\10043\201501\20150119140754_5863.jpg" />
+    <Content Include="Image\Vendor\10044\201501\20150112225659_9291.jpg" />
+    <Content Include="Image\Vendor\10046\201501\20150113205528_6346.jpg" />
+    <Content Include="Image\Vendor\10047\201501\20150114132258_2621.jpg" />
+    <Content Include="Image\Vendor\8\20141123\20141123111011_1449.png" />
+    <Content Include="Image\Vendor\8\20141123\20141123111200_7182.png" />
+    <Content Include="Image\Vendor\8\20141123\20141123111227_3197.png" />
+    <Content Include="Image\Vendor\8\201411\20141123160758_7869.png" />
+    <Content Include="Image\Vendor\8\201411\20141124140428_7969.jpg" />
+    <Content Include="Image\Vendor\8\201411\20141124140503_4936.jpg" />
+    <Content Include="Image\Vendor\8\201411\20141124140505_2436.jpg" />
+    <Content Include="Image\Vendor\8\201411\20141127011002_1648.png" />
+    <Content Include="Image\Vendor\8\201411\20141127105348_0033.jpg" />
+    <Content Include="Image\Vendor\8\201411\20141127105408_8498.jpg" />
+    <Content Include="Image\Vendor\8\201411\20141127105410_8030.jpg" />
+    <Content Include="Image\Vendor\8\201411\20141127110316_4959.jpg" />
+    <Content Include="Image\Vendor\8\201411\20141127110415_7794.jpg" />
+    <Content Include="Image\Vendor\8\201411\20141127110425_3315.jpg" />
+    <Content Include="Image\Vendor\8\201411\20141129173701_6183.png" />
+    <Content Include="Image\Vendor\8\201411\20141130213644_7455.png" />
+    <Content Include="Image\Vendor\8\201411\20141130221646_8925.png" />
+    <Content Include="Image\Vendor\8\201412\20141201153713_4759.jpg" />
+    <Content Include="Image\Vendor\8\201412\20141201153741_7758.jpg" />
+    <Content Include="Image\Vendor\8\201412\20141203215004_4297.png" />
+    <Content Include="Image\Vendor\8\201412\20141208212024_4435.jpg" />
+    <Content Include="Image\Vendor\8\201412\20141230143032_6849.jpg" />
+    <Content Include="Image\Vendor\8\201412\20141230143146_9702.jpg" />
+    <Content Include="Image\Vendor\8\201412\20141230143147_8139.jpg" />
+    <Content Include="Image\Vendor\8\201412\20141230143148_6889.jpg" />
+    <Content Include="Image\Vendor\8\201412\20141230143149_2914.jpg" />
+    <Content Include="Image\Vendor\8\201501\20150130125221_0688.jpg" />
+    <Content Include="Image\Vendor\8\201502\20150202155948_4040.jpg" />
+    <Content Include="Image\Vendor\8\201502\20150202160003_0647.jpg" />
     <Content Include="img\back.png" />
     <Content Include="img\bg_direction_nav.png" />
     <Content Include="img\black.png" />
@@ -541,7 +610,6 @@
     <Content Include="onpay\Alipay\notify_url.aspx" />
     <Content Include="onpay\Alipay\readme.txt" />
     <Content Include="onpay\Alipay\return_url.aspx" />
-    <Content Include="packages.config" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -554,10 +622,12 @@
     <Content Include="Partner\VendorRegist.aspx" />
     <Content Include="Scripts\bootstrap-datetimepicker.zh-CN.js" />
     <Content Include="Page.Master" />
-    <Content Include="Baseinfo.config" />
     <Content Include="kindeditor\asp.net\file_manager_json.ashx" />
     <Content Include="kindeditor\asp.net\upload_json.ashx" />
-    <Content Include="Email.config" />
+    <Content Include="Scripts\jquery.cbFlyout.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WEIXIN\JS_WEIXIN.js" />
     <Content Include="WEIXIN_Login.aspx" />
     <None Include="Properties\PublishProfiles\51eshare.com.pubxml" />
@@ -1046,19 +1116,15 @@
     <Content Include="Vendor\Settles.aspx" />
     <Content Include="Vendor\ShopPd.aspx" />
     <Content Include="Vendor\StockEdit.aspx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Bundle.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Scripts\jquery.validate.globalize.min.js.map" />
+    <Content Include="WEIXIN\mp.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="WEIXIN\mp.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AddtbExpresses.aspx.cs">

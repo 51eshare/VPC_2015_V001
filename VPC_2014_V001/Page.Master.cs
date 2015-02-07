@@ -19,7 +19,6 @@ namespace VPC_2014_V001
         {
             if (!IsPostBack)
             {
-
                 #region Xavier Add WEIXIN
                 if (UserInfo == null)
                 {

@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-2  col-xs-6 text-right text-bold">店铺Logo</div>
         <div class="col-md-10 col-xs-6">
-            <img runat="server" class="logo" id="sImagePath"/>
+            <img runat="server" class="img-responsive img-rounded imgouter" id="sImagePath"/>
         </div>
     </div>
     <div class="row">

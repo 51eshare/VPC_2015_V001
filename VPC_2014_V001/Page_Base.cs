@@ -46,8 +46,10 @@ namespace VPC_2014_V001
         public Page_Base()
         {
             tipclass = "hidden";
+            Title = SiteInfo.title;
         }
         public string tipclass { get; set; }
+
         #region 网站信息
         /// <summary>
         /// 网站信息
@@ -59,9 +61,8 @@ namespace VPC_2014_V001
                 return Service.b_SiteInfo.Site_Info;
             }
         }
-        #endregion 
+        #endregion
 
-        
         #region 用户信息
         /// <summary>
         /// 用户信息

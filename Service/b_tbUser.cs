@@ -58,6 +58,7 @@ namespace Service
         }
 
 
+
         public bool AddUserInfo(tbUser user)
         {
             DynamicParameter.Add("iUserId",user.iUserId);

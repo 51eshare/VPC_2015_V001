@@ -126,16 +126,18 @@ $(function() {
 	});
 });
 
-$('.flex-image').flexslider({
-    direction: "vertical",
-    slideshow:true,
-    controlNav: false,
-    directionNav: true,
-    pauseOnHover: true,
-    animationDuration:600,
-    slideshowSpeed: 7000
-});
-
+try {
+    $('.flex-image').flexslider({
+        direction: "vertical",
+        slideshow: true,
+        controlNav: false,
+        directionNav: true,
+        pauseOnHover: true,
+        animationDuration: 600,
+        slideshowSpeed: 7000
+    });
+}
+catch (e) { }
 /* Support */
 
 $(document).ready(function(){

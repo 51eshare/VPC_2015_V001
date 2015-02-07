@@ -35,17 +35,17 @@
                 <ItemTemplate>
 
                     <div class="row   div_bottom div-display shop-margin">
-                        <div class="col-xs-3">
-                             <a href='/customer/shoppd?ipdid=<%# DataBinder.Eval(Container.DataItem, "iShopRefPdId") %>&shareuid=<%=UserInfo.RealID%>&shopid=<%#DataBinder.Eval(Container.DataItem, "iShopId")%>' target="_top"><img src='<%# DataBinder.Eval(Container.DataItem, "sImagePath") %>' class="img-rounded" height="100" width="100"></a>
+                        <div class="col-md-3">
+                             <a href='/customer/shoppd?ipdid=<%# DataBinder.Eval(Container.DataItem, "iShopRefPdId") %>&shareuid=<%=UserInfo.RealID%>&shopid=<%#DataBinder.Eval(Container.DataItem, "iShopId")%>' target="_top"><img src='<%# DataBinder.Eval(Container.DataItem, "sImagePath") %>' class="img-rounded imgouter"></a>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-md-6">
                             <div class="caption">
                                 商品名称：<%# DataBinder.Eval(Container.DataItem, "sPdName") %><br />
                                 前台售价：<%# DataBinder.Eval(Container.DataItem, "fSaPrice") %><br />
                                 佣金：<%# DataBinder.Eval(Container.DataItem, "fCommission") %><br />
                             </div>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-md-3">
                             <div class="btn-group">
                                 <asp:Button ID="sj" runat="server" Text="下架" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "iShopRefPdId") %>' CssClass="btn btn-primary" />
                             </div>

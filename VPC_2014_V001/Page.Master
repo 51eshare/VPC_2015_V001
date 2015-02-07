@@ -30,12 +30,10 @@
     <link rel="stylesheet" href="/Content/owl.carousel.css">
     <!-- Font awesome CSS -->
     <link href="/Content/font-awesome.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="/Content/style.css" rel="stylesheet">
     <!-- Stylesheet for Color -->
     <link href="/Content/green.css" rel="stylesheet">
-
-
+    <!-- Custom CSS -->
+    <link href="/Content/style.css" rel="stylesheet">
     <!-- Xavier -->
     <!-- WEIXIN -->
     <script src="/WEIXIN/JS_WEIXIN.js"></script>
@@ -53,13 +51,12 @@
             };
         }
         else {
-            c_start=c_start + c_name.length+1 
-            c_end=document.cookie.indexOf(";",c_start)
-            if (c_end==-1) c_end=document.cookie.length
+            c_start = c_start + 1
+            c_end = document.cookie.indexOf(";", c_start)
+            if (c_end == -1) c_end = document.cookie.length
             if (unescape(document.cookie.substring(c_start, c_end)) == '2') {
             }
-            else
-            {
+            else {
                 if (is_weixin()) {
                     document.cookie = 'WXB=1'
                 }
@@ -83,11 +80,11 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-3">
+                <div class="col-md-3 col-sm-8">
                     <!-- Logo. Use class "color" to add color to the text. -->
-                    <img src="/img/logo.png" />
+                    <img src="/img/logo.png" />&#12288;<label class="h2">51分享</label>
                 </div>
-                <div class="col-md-8 col-sm-9">
+                <div class="col-md-9 col-sm-4">
                     <!-- Navigation -->
                     <div class="logo text-right">
                         <%if (UserInfo != null)
