@@ -49,6 +49,7 @@
     <Compile Include="Cookie_Key.cs" />
     <Compile Include="Encrypt.cs" />
     <Compile Include="FileOperate.cs" />
+    <Compile Include="JsHelper.cs" />
     <Compile Include="MailHelper.cs" />
     <Compile Include="PicturDeal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

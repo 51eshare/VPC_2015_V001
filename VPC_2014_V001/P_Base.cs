@@ -112,7 +112,15 @@ namespace VPC_2014_V001
             ddl.Items.Insert(0, new ListItem(infotype, ""));
             ddl.SelectedIndex = 0;
         }
-
+        protected void BindClass(HtmlSelect ddl, IEnumerable<tbStatus> data, string infotype = "")
+        {
+            ddl.DataSource = data;
+            ddl.DataTextField = "sStatus";
+            ddl.DataValueField = "StateValue";
+            ddl.DataBind();
+            ddl.Items.Insert(0, new ListItem(infotype, ""));
+            ddl.SelectedIndex = 0;
+        }
         #region 产品类别
         /// <summary>
         /// 产品类别

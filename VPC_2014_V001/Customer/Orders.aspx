@@ -30,6 +30,27 @@
                 }).show();
                 return false;
             });
+            $("input[id^='btn_all_only']").click(function () {
+                if (pass_all()) {
+                    $("#Alipay").prop("href", "/onpay/Alipay/default?attrsordernum=" + $(this).attr("AttrsOrderNum"));
+                    var elem = $('#info').html();
+                    dialog({
+                        title: '在线支付',
+                        okValue: '付款成功',
+                        ok: function () {
+                            location.href = location.href;
+                        },
+                        cancelValue: '付款失败',
+                        cancel: function () { },
+                        content: elem,
+                        padding: 6,
+                        id: 'EF893L'
+                    }).show();
+                    return false;
+                }
+                else
+                    return false;
+            });
             $("input[id^='payreturn_row']").click(function () {
                 return confirm("确定要退款吗？");
             });
@@ -134,7 +155,7 @@
                                 <th>价格</th>
                                 <th>订单日期</th>
                                 <th>状态</th>
-                                <th>操作 <asp:Button runat="server" OnClientClick="return pass_all();" CommandName="pass_all" Text="批量付款"  ID="btn_all" CssClass="btn btn-danger" /></th>
+                                <th>操作 <asp:Button runat="server" CommandName="pass_all" Text="批量付款"  ID="btn_all_only" CssClass="btn btn-danger" /></th>
                             </tr>
                             <tbody>
                         </thead>
@@ -180,7 +201,7 @@
         </div>
         <input type="hidden" id="check_all_value" runat="server" />
        <input type="hidden" id="iorderid" runat="server" />
-             <!-- 模态框（Modal） -->
+    <!-- 模态框（Modal） -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
         aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">

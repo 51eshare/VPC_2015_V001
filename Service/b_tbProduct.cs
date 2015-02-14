@@ -1,6 +1,8 @@
 ﻿using Dapper;
 using Entity;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -48,7 +50,22 @@ namespace Service
         }
         #endregion
 
-
+        #region 获取最新添加的商品
+        /// <summary>
+        /// 获取最新添加的商品
+        /// </summary>
+        /// <param name="topnum"></param>
+        /// <returns></returns>
+        public List<tbProduct> GetNewProduct(int topnum = 100)
+        {
+            using (IDbConnection _conn = new SqlConnection(ConnStr))
+            {
+                _conn.Open();
+                DynamicParameter.Add("topnum", topnum);
+                return _conn.Query<tbProduct>("SELECT TOP (@topnum) * FROM tbProduct WHERE iQuantity>0 AND iStatus=2 ORDER BY iPdId DESC", DynamicParameter).ToList();
+            }
+        }
+        #endregion 
 
         #region 更新库存
         /// <summary>

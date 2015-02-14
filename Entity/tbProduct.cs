@@ -258,7 +258,9 @@ namespace Entity
 		}
         [Editable(false)]
 		/// <summary>
-		/// 
+		///1：审核中
+        ///2：审核通过
+        ///3：禁止
 		/// </summary>
 		public int iStatus
 		{

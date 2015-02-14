@@ -58,6 +58,17 @@ namespace Common
         /// </summary>
         public static string tbslideshow = "tbslideshow";
 
+        /// <summary>
+        /// 最新商品
+        /// </summary>
+        public static string newproduct = "newproduct";
+
+
+        /// <summary>
+        /// 广告商品
+        /// </summary>
+        public static string adproduct = "adproduct";
+
 
         /// <summary>
         /// 缓存时间
@@ -81,6 +92,11 @@ namespace Common
         /// 咨询类型
         /// </summary>
         public static int questiontype = 3;
+
+        /// <summary>
+        /// 商品广告
+        /// </summary>
+        public static int ad = 9;
 
     }
 }

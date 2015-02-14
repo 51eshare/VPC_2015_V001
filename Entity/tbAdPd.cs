@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using Dapper;
 using System.Text;
 using System.Data.SqlClient;
 
@@ -15,25 +16,21 @@ namespace Entity
 		{}
 		#region Model
 		private long _iadpdid;
-		private long? _igroupcuspdid;
-		private long? _ipromotionid;
-		private long? _ipdid;
-		private long? _ipdhistoryid;
-		private int? _ipdclassid;
-		private decimal? _fpurprice;
-		private decimal? _fcommission;
-		private decimal? _fsaprice;
-		private decimal? _fbdprice;
-		private DateTime? _dbegindate;
-		private DateTime? _denddate;
-		private int? _istatus;
-		private long? _iuserid;
-		private DateTime? _ddate;
-		private long? _iordernum;
-		private long? _iratenum;
+		private long _ipdid;
+		private decimal _fpurprice;
+		private decimal _fcommission;
+		private decimal _fsaprice;
+		private DateTime _dbegindate;
+		private DateTime _denddate;
+		private int _istatus=1;
+		private long _iuserid;
+		private DateTime _ddate;
+		private long _iordernum;
+		private long _iratenum;
 		/// <summary>
 		/// 
 		/// </summary>
+        [Key]
 		public long iAdPdId
 		{
 			set{ _iadpdid=value;}
@@ -42,63 +39,33 @@ namespace Entity
 		/// <summary>
 		/// 
 		/// </summary>
-		public long? iGroupCusPdId
-		{
-			set{ _igroupcuspdid=value;}
-			get{return _igroupcuspdid;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public long? iPromotionId
-		{
-			set{ _ipromotionid=value;}
-			get{return _ipromotionid;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public long? iPdId
+		public long iPdId
 		{
 			set{ _ipdid=value;}
 			get{return _ipdid;}
 		}
+        [Editable(false)]
+        public string sPdName { get; set;}
 		/// <summary>
-		/// 
+        /// 供应商结算价
 		/// </summary>
-		public long? iPdHistoryId
-		{
-			set{ _ipdhistoryid=value;}
-			get{return _ipdhistoryid;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public int? iPdClassId
-		{
-			set{ _ipdclassid=value;}
-			get{return _ipdclassid;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public decimal? fPurPrice
+		public decimal fPurPrice
 		{
 			set{ _fpurprice=value;}
 			get{return _fpurprice;}
 		}
 		/// <summary>
-		/// 
+        /// 佣金
 		/// </summary>
-		public decimal? fCommission
+        [Editable(false)]
+		public decimal fCommission
 		{
-			set{ _fcommission=value;}
-			get{return _fcommission;}
+            get { return _fsaprice - _fpurprice; }
 		}
 		/// <summary>
-		/// 
+        /// 零售价
 		/// </summary>
-		public decimal? fSaPrice
+		public decimal fSaPrice
 		{
 			set{ _fsaprice=value;}
 			get{return _fsaprice;}
@@ -106,15 +73,7 @@ namespace Entity
 		/// <summary>
 		/// 
 		/// </summary>
-		public decimal? fBdPrice
-		{
-			set{ _fbdprice=value;}
-			get{return _fbdprice;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public DateTime? dBeginDate
+		public DateTime dBeginDate
 		{
 			set{ _dbegindate=value;}
 			get{return _dbegindate;}
@@ -122,23 +81,31 @@ namespace Entity
 		/// <summary>
 		/// 
 		/// </summary>
-		public DateTime? dEndDate
+		public DateTime dEndDate
 		{
 			set{ _denddate=value;}
 			get{return _denddate;}
 		}
 		/// <summary>
-		/// 
+		/// 1：无效，1：有效
 		/// </summary>
-		public int? iStatus
+        [Editable(false)]
+		public int iStatus
 		{
-			set{ _istatus=value;}
-			get{return _istatus;}
+			get{
+                return _istatus;
+            }
+            set {
+                _istatus = value;
+            }
 		}
+        [Editable(false)]
+        public string siStatus { get; set;}
+
 		/// <summary>
 		/// 
 		/// </summary>
-		public long? iUserId
+		public long iUserId
 		{
 			set{ _iuserid=value;}
 			get{return _iuserid;}
@@ -146,23 +113,26 @@ namespace Entity
 		/// <summary>
 		/// 
 		/// </summary>
-		public DateTime? dDate
+        [Editable(false)]
+		public DateTime dDate
 		{
 			set{ _ddate=value;}
 			get{return _ddate;}
 		}
+        [Editable(false)]
 		/// <summary>
 		/// 
 		/// </summary>
-		public long? iOrderNum
+		public long iOrderNum
 		{
 			set{ _iordernum=value;}
 			get{return _iordernum;}
 		}
+        [Editable(false)]
 		/// <summary>
 		/// 
 		/// </summary>
-		public long? iRateNum
+		public long iRateNum
 		{
 			set{ _iratenum=value;}
 			get{return _iratenum;}

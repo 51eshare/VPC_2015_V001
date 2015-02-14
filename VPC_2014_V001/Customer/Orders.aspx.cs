@@ -69,17 +69,17 @@ namespace VPC_2014_V001.VPC.Customer
             var _commandname = e.CommandName;
             if (_commandname.Equals("pay_row"))
             {
-                if (new b_tbOrder().UpdateStatus(Int32.Parse(_iorderid.ToString()), 2))
-                {
-                    tipclass = string.Empty;
-                    message.Text = "付款成功！";
-                    loaddata();
-                }
-                else
-                {
-                    tipclass = string.Empty;
-                    message.Text = "付款失败！";
-                }
+                //if (new b_tbOrder().UpdateStatus(Int32.Parse(_iorderid.ToString()), 2))
+                //{
+                //    tipclass = string.Empty;
+                //    message.Text = "付款成功！";
+                //    loaddata();
+                //}
+                //else
+                //{
+                //    tipclass = string.Empty;
+                //    message.Text = "付款失败！";
+                //}
             }
             else if (_commandname.Equals("del_row"))
             {
@@ -125,14 +125,14 @@ namespace VPC_2014_V001.VPC.Customer
             }
             else if (_commandname.Equals("pass_all"))
             {
-                if (new b_tbProduct().update(check_all_value.Value.Trim()))
-                {
-                    loaddata();
-                }
-                else
-                {
-                    tipclass = string.Empty;
-                }
+                //if (new b_tbProduct().update(check_all_value.Value.Trim()))
+                //{
+                //    loaddata();
+                //}
+                //else
+                //{
+                //    tipclass = string.Empty;
+                //}
             }
             else
             {

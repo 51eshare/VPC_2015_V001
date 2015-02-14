@@ -6,12 +6,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 using System.Data;
+using Common;
 
 namespace VPC_2014_V001.VPC.Customer
 {
     public partial class ShoppingCart : P_Base
     {
+        public string show_dialog = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -43,28 +46,36 @@ namespace VPC_2014_V001.VPC.Customer
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            
+
             var _order = new tbOrder();
             var _id = string.Empty;
             var _table = GetDataTable();
             DataRow _datarow;
             foreach (RepeaterItem item in Repeater1.Items)
             {
-                _datarow = _table.NewRow();
-                _id = (item.FindControl("iScId") as HiddenField).Value;
-                _datarow["iOrderNum"] = long.Parse(Request.Form["number_"+_id]);
-                _order.iUserid = long.Parse((item.FindControl("iUserid") as HiddenField).Value);
-                _datarow["iShopRefPdId"] = long.Parse((item.FindControl("iShopRefPdId") as HiddenField).Value);
-                _datarow["iScId"] = long.Parse((item.FindControl("iScId") as HiddenField).Value);
-                _table.Rows.Add(_datarow);
+                if ((item.FindControl("select_iscid") as HtmlInputCheckBox).Checked)
+                {
+                    _datarow = _table.NewRow();
+                    _id = (item.FindControl("iScId") as HiddenField).Value;
+                    _datarow["iOrderNum"] = long.Parse(Request.Form["number_" + _id]);
+                    _order.iUserid = long.Parse((item.FindControl("iUserid") as HiddenField).Value);
+                    _datarow["iShopRefPdId"] = long.Parse((item.FindControl("iShopRefPdId") as HiddenField).Value);
+                    _datarow["iScId"] = long.Parse((item.FindControl("iScId") as HiddenField).Value);
+                    _table.Rows.Add(_datarow);
+                }
             }
-            _order.Data=_table;
+            _order.Data = _table;
             _order.bBill = bBill.Checked;
             _order.BillType = Int32.Parse(Request.Form["BillType"]);
             _order.Comhead = comhead.Value;
             _order.Remark = Remark.Value;
             _order.iDistrictId = Int32.Parse(iDistrictId.Value);
-            if (new b_tbOrder().Add_Up_tbOrder(_order))
-                Response.Redirect("Orders");
+            if (true)//new b_tbOrder().Add_Up_tbOrder(_order)
+            {
+                attrsordernum.Value = "EC0001";
+                show_dialog = "show_dialog();";
+            }
             else
             {
                 tipclass = string.Empty;

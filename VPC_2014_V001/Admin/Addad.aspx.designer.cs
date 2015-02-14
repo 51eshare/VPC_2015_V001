@@ -7,10 +7,19 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace VPC_2014_V001.VPC.Customer {
+namespace VPC_2014_V001.VPC.Admin {
     
     
-    public partial class ShoppingCart {
+    public partial class Addad {
+        
+        /// <summary>
+        /// AddSlideshowInfo 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm AddSlideshowInfo;
         
         /// <summary>
         /// message 控件。
@@ -22,84 +31,66 @@ namespace VPC_2014_V001.VPC.Customer {
         protected global::System.Web.UI.WebControls.Label message;
         
         /// <summary>
-        /// Repeater1 控件。
+        /// iPdId 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::System.Web.UI.WebControls.TextBox iPdId;
         
         /// <summary>
-        /// price 控件。
+        /// fPurPrice 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl price;
+        protected global::System.Web.UI.WebControls.TextBox fPurPrice;
         
         /// <summary>
-        /// Repeater2 控件。
+        /// fSaPrice 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater2;
+        protected global::System.Web.UI.WebControls.TextBox fSaPrice;
         
         /// <summary>
-        /// iDistrictId 控件。
+        /// dBeginDate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden iDistrictId;
+        protected global::System.Web.UI.WebControls.TextBox dBeginDate;
         
         /// <summary>
-        /// bBill 控件。
+        /// dEndDate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox bBill;
+        protected global::System.Web.UI.WebControls.TextBox dEndDate;
         
         /// <summary>
-        /// comhead 控件。
+        /// Button1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText comhead;
+        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit Button1;
         
         /// <summary>
-        /// Remark 控件。
+        /// btn_back 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea Remark;
-        
-        /// <summary>
-        /// Button2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-        
-        /// <summary>
-        /// attrsordernum 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden attrsordernum;
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btn_back;
     }
 }
