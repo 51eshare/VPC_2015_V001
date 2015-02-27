@@ -123,12 +123,12 @@ namespace Service
         /// 获取最新商品
         /// </summary>
         /// <returns></returns>
-        public List<tbProduct> GetNewProduct()
+        public static List<tbProduct> GetNewProduct()
         {
             return MemoryCache.Default.Get(Cache_Key.newproduct, Cache_Key.Time, () => new b_tbProduct().GetNewProduct());
 
         }
-        public List<tbProduct> GetRandomProduct()
+        public static List<tbProduct> GetRandomProduct()
         {
             var _list = GetNewProduct();
             var _index = _list.Count - 1;

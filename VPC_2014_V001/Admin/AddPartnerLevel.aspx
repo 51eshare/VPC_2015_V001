@@ -56,7 +56,7 @@
                 rules:{
                     <%=price.UniqueID%>: {
                         required: true,
-                        min:1
+                        min:0
                     },
                     <%=llevel.UniqueID%>: {
                         required: true,
@@ -74,7 +74,7 @@
                 messages:{
                     <%=price.UniqueID%>: {
                         required: "请填微店积分",
-                        min:"销售金额至少大于1"
+                        min:"销售金额至少大于等于0"
                     },
                     <%=llevel.UniqueID%>: {
                         required: "请填写微店等级",

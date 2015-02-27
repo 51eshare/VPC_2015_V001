@@ -106,25 +106,27 @@
         <script charset="utf-8" src="/kindeditor/kindeditor-min.js"></script>
         <script charset="utf-8" src="/kindeditor/lang/zh_CN.js"></script>
         <script>
-            var editor;
             KindEditor.ready(function (K) {
-                editor = K.create('#sMemo', {
-                    uploadJson: '/kindeditor/asp.net/upload_json.ashx?iVendorId=<%=UserInfo.RealID%>',
+                var  editor = K.create('#sMemo', {
+                    uploadJson: '/kindeditor/asp.net/upload_json.ashx?iVendorId=<%=UserInfo.RealID%>&width=660',
                     fileManagerJson: '/kindeditor/asp.net/file_manager_json.ashx?iVendorId=<%=UserInfo.RealID%>',
                     allowFileManager: true,
                     afterBlur: function () {
                         document.getElementById("sMemo").value = editor.html();
-                       
-                    }
-                }
+                    }}
                 );
+                var faceimgeditor = K.editor({
+                    uploadJson: '/kindeditor/asp.net/upload_json.ashx?iVendorId=<%=UserInfo.RealID%>&width=180',
+                    fileManagerJson: '/kindeditor/asp.net/file_manager_json.ashx?iVendorId=<%=UserInfo.RealID%>',
+                    allowFileManager: false
+                });
                 K('#btn_sImagePath').click(function () {
-                    editor.loadPlugin('image', function () {
-                        editor.plugin.imageDialog({
+                    faceimgeditor.loadPlugin('image', function () {
+                        faceimgeditor.plugin.imageDialog({
                             imageUrl: K('#sImagePath').val(),
                             clickFn: function (url, title, width, height, border, align) {
                                 K('#sImagePath').val(url);
-                                editor.hideDialog();
+                                faceimgeditor.hideDialog();
                             }
                         });
                     });

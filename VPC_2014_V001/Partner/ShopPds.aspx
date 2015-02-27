@@ -9,6 +9,53 @@
             <asp:Label ID="message" runat="server" Text=""></asp:Label>
         </p>
         </div>
+        <div class="container-fluid">
+           <asp:Repeater ID="adproduct" runat="server" OnItemCommand="Repeater1_ItemCommand" OnItemDataBound="adproduct_ItemDataBound" >
+                <ItemTemplate>
+                    <div class="row  div_bottom div-display shop-margin">
+                        <div class="col-md-3">
+                            <a href='/Vendor/ShopPd?iPdId=<%# DataBinder.Eval(Container.DataItem, "iPdId") %>&urlreferrer=<%=StringEncode("/Partner/ShopPds")%>&operate=<%=StringEncode("view")%>' target="_top"><img src='<%# DataBinder.Eval(Container.DataItem, "sImagePath") %>' class="img-rounded imgouter"></a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="caption">
+                                商品名称：<%# DataBinder.Eval(Container.DataItem, "sPdName") %><br />
+                                前台售价：<%# DataBinder.Eval(Container.DataItem, "fSaPrice") %><br />
+                                佣金：<%# DataBinder.Eval(Container.DataItem, "fCommission") %><br />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-group">
+                                <asp:Button ID="sj" runat="server" Text="上架" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "iPdId") %>' CssClass="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+        <div class="container-fluid">
+           <asp:Repeater ID="newproduct" runat="server" OnItemCommand="Repeater1_ItemCommand" OnItemDataBound="adproduct_ItemDataBound">
+                <ItemTemplate>
+                    <div class="row  div_bottom div-display shop-margin">
+                        <div class="col-md-3">
+                            <a href='/Vendor/ShopPd?iPdId=<%# DataBinder.Eval(Container.DataItem, "iPdId") %>&urlreferrer=<%=StringEncode("/Partner/ShopPds")%>&operate=<%=StringEncode("view")%>' target="_top"><img src='<%# DataBinder.Eval(Container.DataItem, "sImagePath") %>' class="img-rounded imgouter"></a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="caption">
+                                商品名称：<%# DataBinder.Eval(Container.DataItem, "sPdName") %><br />
+                                前台售价：<%# DataBinder.Eval(Container.DataItem, "fSaPrice") %><br />
+                                佣金：<%# DataBinder.Eval(Container.DataItem, "fCommission") %><br />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-group">
+                                <asp:Button ID="sj" runat="server" Text="上架" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "iPdId") %>' CssClass="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+        <div class="data-space"></div>
         <div class="form-group form-group-min">
             <input type="hidden" runat="server" id="iPdClassId" value="0" />
             <div class="col-xs-8 col-md-3">

@@ -1,12 +1,7 @@
 ﻿using Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using Entity;
 using Service;
+using System;
 
 namespace VPC_2014_V001
 {
